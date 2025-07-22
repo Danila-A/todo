@@ -1,0 +1,31 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.input {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    
+    &_search {
+        padding-right: 40px;
+    }
+    &_add {
+        padding-right: 16px;
+    }
+    &_dark {
+        border: 1px solid global.$darkThemeTextColor;
+        color: global.$lightThemeColor;
+        &:focus {
+            outline: 2px solid  global.$darkThemeFocusColor;
+        }
+    }
+    &_light {
+        border: 2px solid global.$mainColor;
+        color: global.$lightThemeTextColor;
+        &:focus {
+            outline: 2px solid global.$lightThemeFocusColor;
+        }
+    }
+}
+
