@@ -1,0 +1,10 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.svg {
+    .path {
+        color: global.$unActiveIconColor;
+    }
+    &:hover.path {
+        color: global.$trashActiveColor;
+    }
+}

@@ -1,0 +1,8 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.path {
+    color: global.$unActiveIconColor;
+    &:hover {
+        color: global.$lightThemeColor;
+    }
+}
