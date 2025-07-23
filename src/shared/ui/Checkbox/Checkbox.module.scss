@@ -1,0 +1,23 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.checkbox {
+    width: 26px;
+    height: 26px;
+    border-radius: 2px;
+    border: 1px solid global.$mainColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &_checked {
+        background-color: global.$mainColor;
+    }
+}
+
+.checkMark {
+    width: 100%;
+    display: none;
+    &_checked {
+        display: block;
+    }
+}

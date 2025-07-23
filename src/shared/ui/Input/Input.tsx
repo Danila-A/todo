@@ -16,9 +16,9 @@ export const Input: FC<Props> = ({ inputType, placeholder, themeType }) => {
     return (
         <div>
             <input 
-            type="text"  
-            placeholder={placeholder} 
-            className={ `${inputTypeClass} ${themeTypeClass}` } />
+                type="text"  
+                placeholder={placeholder} 
+                className={ `${inputTypeClass} ${themeTypeClass}` } />
         </div>
     );
 }

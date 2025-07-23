@@ -1,0 +1,12 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.title {
+    text-transform: uppercase;
+    font-size: global.$titleFontSize;
+    &_light {
+        color: global.$lightThemeTextColor;
+    }
+    &_dark {
+        color: global.$darkThemeTextColor;
+    }
+}
