@@ -1,2 +1,2 @@
-export { App } from './App';
-export { useAppDispatch, useAppSelector } from './store/hooks';
+export { App } from './App.tsx';
+export { useAppDispatch, useAppSelector } from './store/hooks.ts';

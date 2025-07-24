@@ -1,0 +1,9 @@
+@use '../../../../app/Styles/Variables.scss' as global;
+
+.imageBlock {
+    margin-bottom: 20px;
+}
+.caption {
+    text-align: center;
+    color: global.$secondTextFontSize;
+}
