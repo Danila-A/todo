@@ -14,10 +14,10 @@ const todoSlice = createSlice({
         selectTodos: (state) => state.todoList,
     },
     reducers: {
-        addTodo(state, action: PayloadAction<string>){
+        addTodo(state, action: PayloadAction<{ text: string }>){
             state.todoList?.push({
                 id: Math.random(),
-                text: action.payload,
+                text: action.payload.text,
                 status: false,
             });
             if (state.todoList) setDataToLocalStorage<TodoItem[]>(state.todoList, 'todos');
