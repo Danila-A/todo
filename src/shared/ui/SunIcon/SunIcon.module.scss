@@ -1,0 +1,5 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.sunIcon {
+    color: global.$lightThemeColor;
+}
