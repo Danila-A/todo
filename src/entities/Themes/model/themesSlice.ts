@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { ThemeState, ThemeType } from "./types";
 import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../app";
 
@@ -13,9 +13,14 @@ const themeSlice = createSlice({
         selectTheme: (state) => state.theme,
     },
     reducers: {
-        toggleTheme(state, action: PayloadAction<ThemeType>) {
-            if (action.payload) state.theme = action.payload;
-            setDataToLocalStorage<ThemeType>(action.payload, 'theme');
+        toggleTheme(state) {
+            if (state.theme == 'light') {
+                state.theme = 'dark';
+                setDataToLocalStorage<ThemeType>('dark', 'theme');    
+            } else {
+                state.theme = 'light';
+                setDataToLocalStorage<ThemeType>('light', 'theme');
+            }            
         },
         retrieveThemeTypeFromLocalStorage(state) {
             const localStorageThemeType = getDataFromLocalStorage<ThemeType>('theme');
