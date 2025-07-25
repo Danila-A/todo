@@ -1,0 +1,16 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid global.$mainColor;
+    background-color: global.$mainColor;
+    box-shadow: 0 0 4px global.$mainColor;
+    &:hover {
+        background-color: global.$darkMainColor;
+    }
+}
