@@ -1,0 +1,23 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.modal {
+    width: 500px;
+    height: 289px;
+    border-radius: 16px;
+    background-color: global.$lightThemeColor;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-right: 30px;
+    padding-left: 30px;
+    &::backdrop {
+        background-color: global.$modalBackdropColor;
+    }
+    @media (max-width:500px) {
+        width: 100%;
+        margin: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
