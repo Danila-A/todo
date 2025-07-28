@@ -7,7 +7,7 @@ import { useAppSelector } from "../../../app";
 
 export const FiltersButton: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const filter = useAppSelector(selectMemoizedFi lter);
+    const filter = useAppSelector(selectMemoizedFilter);
 
     const handleChangeFilter = (filter: FilterType) => {
         changeFilterHandler(filter);
