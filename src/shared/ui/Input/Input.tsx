@@ -1,14 +1,16 @@
-import type { FC } from "react";
 import styles from './Input.module.scss';
 import type { ThemeType } from "../../../entities/Themes";
+import type {  Path, FieldValues, UseFormRegister } from "react-hook-form";
 
-interface Props {
+interface Props<T extends FieldValues> {
     inputType: 'search' | 'add';
     placeholder: string;
     themeType: ThemeType;
+    label: Path<T>;
+    register: UseFormRegister<T>;
 }
 
-export const Input: FC<Props> = ({ inputType, placeholder, themeType }) => {
+export const Input = <T extends FieldValues, >({ inputType, placeholder, themeType, label, register }: Props<T>) => {
 
     const inputTypeClass: string = inputType == 'search' ? styles.input_search : styles.input_add;
     const themeTypeClass: string = themeType == 'light' ? styles.input_light : styles.input_dark;
@@ -18,7 +20,9 @@ export const Input: FC<Props> = ({ inputType, placeholder, themeType }) => {
             <input 
                 type="text"  
                 placeholder={placeholder} 
-                className={ `${inputTypeClass} ${themeTypeClass}` } />
+                className={ `${inputTypeClass} ${themeTypeClass}` } 
+                { ...register(label) }
+            />
         </div>
     );
 }
