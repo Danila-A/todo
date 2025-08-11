@@ -12,8 +12,8 @@ const filterSlice = createSlice({
         selectFilter: (state) => state.value,
     },
      reducers: {
-        changeFilter(state, action: PayloadAction<{ value: FilterType }>) {
-            if (action.payload) state.value = action.payload.value;
+        changeFilter(state, action: PayloadAction<{ filter: FilterType }>) {
+            if (action.payload) state.value = action.payload.filter;
         },
      },
 });

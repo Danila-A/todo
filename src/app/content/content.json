@@ -1,0 +1,16 @@
+{
+    "filters": [
+        {
+            "id": 1,
+            "value": "all"
+        },
+        {
+            "id": 2,
+            "value": "complete"
+        },
+        {
+            "id": 3,
+            "value": "incomplete"
+        }
+    ]
+}
