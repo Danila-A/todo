@@ -1,6 +1,5 @@
 export { EmptyImage } from './ui/EmptyImage/EmptyImage.tsx';
 export { TodoItemText } from './ui/TodoItemText/TodoItemText.tsx';
-export { selectMemoizedTodos } from './model/selectMemoizedTodos.ts';
 export type { TodoState } from './model/types.ts';
 export {
     default as todoReducer,
