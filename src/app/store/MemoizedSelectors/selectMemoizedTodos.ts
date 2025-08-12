@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectTodos } from "./todoSlice";
-import { selectFilter } from "../../Filters";
-import { selectSearchValue } from "../../Search";
-import type { TodoItem } from "./types";
+import { selectTodos } from "../../../entities/Todos/model/todoSlice";
+import { selectFilter } from "../../../entities/Filters";
+import { selectSearchValue } from "../../../entities/Search";
+import type { TodoItem } from "../../../entities/Todos/model/types";
 
 export const selectMemoizedTodos = createSelector(
     [selectTodos, selectFilter, selectSearchValue],
