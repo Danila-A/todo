@@ -13,5 +13,6 @@
             "id": 3,
             "value": "incomplete"
         }
-    ]
+    ],
+    "emptyImageText": "empty..."
 }
