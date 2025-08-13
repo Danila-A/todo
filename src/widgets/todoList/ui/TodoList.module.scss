@@ -1,0 +1,38 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.main {
+    width: global.$contentWidth;
+    &__inner {
+        padding-top: 30px;
+        position: relative;
+        .listItem {
+            border-bottom: 1px solid global.$mainColor;
+            &:last-child {
+                border-bottom: none;
+            }
+            &__inner {
+                padding-bottom: 17px;
+                position: relative;
+                width: 100%;
+                display: flex;
+                .listItem__checkbox {
+                    margin-right: 7px;
+                }
+                .listItem__deleteButton {
+                    opacity: 0;
+                    position: absolute;
+                    right: 3px;
+                    top: 4px;
+                }
+            }
+            &:hover.listItem__deleteButton {
+                opacity: 1;
+            }
+        }
+        .main__modalOpenButton {
+            position: absolute;
+            right: 8px;
+            bottom: 32px;
+        }
+    }
+}
