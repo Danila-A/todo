@@ -1,0 +1,11 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.main {
+    width: global.$contentWidth;
+    &__inner {
+        padding-top: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
