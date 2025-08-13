@@ -1,0 +1,28 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.header {
+    width: global.$contentWidth;
+    .title {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        margin-bottom: 18px;
+    }
+    .controlGroup {
+        display: flex;
+        div:not(last-child) {
+            margin-right: 16px;
+        }
+        .searchBlock {
+            flex-grow: 1;
+            @media (max-width: 500px) {
+                flex-basis: 100%;
+            }
+        }
+        @media (max-width: 500px) {
+            flex-wrap: wrap;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
+}
