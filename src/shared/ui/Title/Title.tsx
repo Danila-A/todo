@@ -1,13 +1,13 @@
 import type { FC } from "react";
-import type { ThemeType } from "../../../entities/Themes";
 import styles from './Title.module.scss';
+import { selectMemoizedTheme, useAppSelector } from "../../../app";
 
 interface Props {
-    themeType: ThemeType;
     text: string;
 }
 
-export const Title: FC<Props> = ({ themeType, text }) => {
+export const Title: FC<Props> = ({ text }) => {
+    const themeType = useAppSelector(selectMemoizedTheme);
     const themeClass = themeType == 'light' ? styles.title_light : styles.title_dark;
 
     return (
