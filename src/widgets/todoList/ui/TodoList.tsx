@@ -6,17 +6,18 @@ import { TodoDeleteButton } from "../../../features/todoDeleteButton";
 import { deleteTodoHandler } from "../../../features/todoDeleteButton/handler/deleteTodoHandler";
 import { ModalOpenButton } from "../../../features/modalOpenButton";
 import styles from './TodoList.module.scss';
+import { WithImagePlaceholder } from "../../../app";
 
 interface Props {
-    todos: TodoItem[];
+    todos: TodoItem[] | null;
 }
 
-export const TodoList: FC<Props> = ({ todos }) => {
+const TodoList: FC<Props> = ({ todos }) => {
     return (
         <main className={styles.main}>
             <div className={styles.main__inner}>
 
-                {todos.map((item) => (
+                {todos?.map((item) => (
                     <div key={item.id} className={styles.listItem}>
                         <div className={styles.listItem__inner}>
 
@@ -45,3 +46,5 @@ export const TodoList: FC<Props> = ({ todos }) => {
         </main>
     );
 }
+
+export const TodoListWithImagePlaceholder = WithImagePlaceholder(TodoList);
