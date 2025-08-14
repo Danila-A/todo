@@ -1,10 +1,12 @@
 import type { FC } from 'react';
 import styles from './SearchForm.module.scss';
 import { Input, LensIcon } from '../../../shared';
-import { useAppSelector } from '../../../app';
-import { selectMemoizedTheme } from '../../../entities/Themes';
+import { 
+    selectMemoizedTheme, 
+    useAppSelector, 
+    type SearchFormValue 
+} from '../../../app';
 import { useForm } from 'react-hook-form';
-import type { SearchFormValue } from '../../../app/types';
 import { handleSearchFormSubmit } from '../handler/handleSearchFormSubmit';
 
 export const SearchForm: FC = () => {
