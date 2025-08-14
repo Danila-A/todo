@@ -8,11 +8,13 @@ export const selectMemoizedTodos = createSelector(
     [selectTodos, selectFilter, selectSearchValue],
     (todos, filter, searchValue) => {
         if (filter == 'complete') {
-            return filterBySearchValue(searchValue, todos)?.filter((item) => item.status == true);
+            const result = filterBySearchValue(searchValue, todos);
+            return result ? result.filter((item) => item.status == true) : null;
         }
 
         if (filter == 'incomplete') {
-            return filterBySearchValue(searchValue, todos)?.filter((item) => item.status == false);
+            const result = filterBySearchValue(searchValue, todos);
+            return result ? result.filter((item) => item.status == false) : null;
         }
 
         return filterBySearchValue(searchValue, todos);
