@@ -1,13 +1,13 @@
+import type { FC } from "react";
 import { EmptyList } from "../../widgets/emptyList";
-import { TodoList } from "../../widgets/todoList";
 import { useAppSelector } from "../store/hooks"
 import { selectMemoizedTodos } from "../store/MemoizedSelectors/selectMemoizedTodos"
 
-export const withImagePlaceholder = () => {
-    return function WithImagePlaceholder() {
+export const WithImagePlaceholder = <P extends object>(Component: FC<P>) => {
+    return (props: P) => {
         const todos = useAppSelector(selectMemoizedTodos);
 
         if (!todos) return <EmptyList />
-        return <TodoList todos={todos} />
+        return <Component {...props} />
     }
 }

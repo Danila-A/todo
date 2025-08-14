@@ -7,5 +7,5 @@ export { selectMemoizedFilter } from './store/MemoizedSelectors/selectMemoizedFi
 export { selectMemoizedSearchValue } from './store/MemoizedSelectors/selectMemoizedSearchValue.ts';
 export { selectMemoizedTheme } from './store/MemoizedSelectors/selectMemoizedTheme.ts';
 export { selectMemoizedTodos } from './store/MemoizedSelectors/selectMemoizedTodos.ts';
-export { withImagePlaceholder } from './hocs/WithImagePlaceholder.tsx';
+export { WithImagePlaceholder } from './hocs/WithImagePlaceholder.tsx';
 export type { SearchFormValue, AddTodoFormValue } from './types/index.ts';
