@@ -2,14 +2,13 @@ import type { FC } from 'react';
 import styles from './ModalAddTodoForm.module.scss';
 import { Modal } from '../../../entities/Modal';
 import { Input, Title } from '../../../shared';
-import { contentData, selectMemoizedTheme, useAppSelector, type AddTodoFormValue } from '../../../app';
+import { contentData, type AddTodoFormValue } from '../../../app';
 import { useForm } from 'react-hook-form';
 import { ModalCloseButton } from '../../../features/modalCloseButton';
 import { TodoAddButton } from '../../../features/todoAddButton';
 import { handleAddTodoFormSubmit } from '../handler/handleAddTodoFormSubmit';
 
 export const ModalAddTodoForm: FC = () => {
-    const themeType = useAppSelector(selectMemoizedTheme);
     const { register, handleSubmit } = useForm<AddTodoFormValue>();
     return (
         <Modal>
@@ -27,7 +26,6 @@ export const ModalAddTodoForm: FC = () => {
                             <Input<AddTodoFormValue> 
                                 inputType={'add'}
                                 placeholder={'input your note...'}
-                                themeType={themeType}
                                 label={'add'}
                                 register={ register }
                             />
