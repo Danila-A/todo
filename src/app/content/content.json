@@ -14,5 +14,6 @@
             "value": "incomplete"
         }
     ],
-    "emptyImageText": "empty..."
+    "emptyImageText": "empty...",
+    "modalTitle": "new note"
 }
