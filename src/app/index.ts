@@ -8,3 +8,4 @@ export { selectMemoizedSearchValue } from './store/MemoizedSelectors/selectMemoi
 export { selectMemoizedTheme } from './store/MemoizedSelectors/selectMemoizedTheme.ts';
 export { selectMemoizedTodos } from './store/MemoizedSelectors/selectMemoizedTodos.ts';
 export { withImagePlaceholder } from './hocs/WithImagePlaceholder.tsx';
+export type { SearchFormValue, AddTodoFormValue } from './types/index.ts';
