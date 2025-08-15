@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import styles from './ThemeButton.module.scss';
-import { useAppSelector } from '../../../app';
-import { selectMemoizedTheme } from '../../../entities/Themes';
+import { selectMemoizedTheme, useAppSelector } from '../../../app';
 import { MoonIcon } from '../../../shared';
 import { SunIcon } from '../../../shared/ui/SunIcon/SunIcon';
 import { toggleThemeHandler } from '../handler/toggleThemeHandler';
