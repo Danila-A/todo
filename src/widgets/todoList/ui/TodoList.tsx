@@ -1,11 +1,12 @@
 import type { FC } from "react";
-import { Checkbox } from "../../../shared";
 import { TodoItemText } from "../../../entities/Todos";
 import { TodoDeleteButton } from "../../../features/todoDeleteButton";
 import { deleteTodoHandler } from "../../../features/todoDeleteButton/handler/deleteTodoHandler";
 import { ModalOpenButton } from "../../../features/modalOpenButton";
 import styles from './TodoList.module.scss';
-import { selectMemoizedTodos, useAppSelector, WithImagePlaceholder } from "../../../app";
+import { useAppSelector, WithImagePlaceholder } from "../../../shared/lib";
+import { Checkbox } from "../../../shared/ui";
+import { selectMemoizedTodos } from "../../../features/todoAddButton";
 
 const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
@@ -19,7 +20,7 @@ const TodoList: FC = () => {
                         <div className={styles.listItem__inner}>
 
                             <div className={styles.listItem__checkbox}>
-                                <Checkbox 
+                                <Checkbox
                                     clickHandler={deleteTodoHandler} 
                                     checked={item.status}
                                     id={item.id}

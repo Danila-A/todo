@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { ThemeState, ThemeType } from "./types";
-import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../app";
+import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
 
 const initialState: ThemeState = {
     theme: 'light'
