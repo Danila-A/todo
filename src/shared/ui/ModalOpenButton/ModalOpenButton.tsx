@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import styles from './ModalOpenButton.module.scss';
-import { openModalHandler } from '../handler/openModalHandler';
-import { PlusIcon } from '../../../shared';
+import { openModalHandler } from '../../handlers/openModalHandler';
+import { PlusIcon } from '../PlusIcon/PlusIcon';
 
 export const ModalOpenButton: FC = () => {
     return (

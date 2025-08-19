@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectTheme } from "../../../entities/Themes/model/themesSlice";
+import { selectTheme } from "./themesSlice";
 
 export const selectMemoizedTheme = createSelector(
     [selectTheme],

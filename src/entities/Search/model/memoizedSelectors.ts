@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectSearchValue } from "../../../entities/Search/model/searchSlice";
+import { selectSearchValue } from "./searchSlice";
 
 export const selectMemoizedSearchValue = createSelector(
     [selectSearchValue],

@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectFilter } from "../../../entities/Filters/model/filterSlice";
+import { selectFilter } from "./filterSlice";
 
 export const selectMemoizedFilter = createSelector(
     [selectFilter],
