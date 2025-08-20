@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import styles from './ModalAddTodoForm.module.scss';
+import styles from './AddTodoForm.module.scss';
 import { Modal } from '../../../entities/Modal';
 import { Input, Title } from '../../../shared';
 import { contentData, type AddTodoFormValue } from '../../../app';
@@ -8,7 +8,7 @@ import { ModalCloseButton } from '../../../features/modalCloseButton';
 import { TodoAddButton } from '../../../features/todoAddButton';
 import { handleAddTodoFormSubmit } from '../handler/handleAddTodoFormSubmit';
 
-export const ModalAddTodoForm: FC = () => {
+export const AddTodoForm: FC = () => {
     const { register, handleSubmit } = useForm<AddTodoFormValue>();
     return (
         <Modal>

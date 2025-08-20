@@ -1,12 +1,16 @@
 import type { FC } from 'react';
 import styles from './ModalOpenButton.module.scss';
-import { openModalHandler } from '../../handlers/openModalHandler';
 import { PlusIcon } from '../PlusIcon/PlusIcon';
 
 export const ModalOpenButton: FC = () => {
+
+    const openModalHandler = () => {
+        (document.getElementById('modal') as HTMLDialogElement).showModal();
+    }
+
     return (
         <div
-            className={ styles.wrapper }    
+            className={ styles.wrapper }
             onClick={ openModalHandler }
         >
             <PlusIcon />

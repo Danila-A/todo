@@ -1,11 +1,11 @@
 import type { FC } from 'react';
-import styles from './TodoItemText.module.scss';
+import styles from './TodoText.module.scss';
 
 interface Props {
     text: string;
 }
 
-export const TodoItemText: FC<Props> = ({ text }) => {
+export const TodoText: FC<Props> = ({ text }) => {
     return (
         <div>
             <span className={ styles.text }>{ text }</span>

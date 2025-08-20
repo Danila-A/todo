@@ -1,5 +1,9 @@
-export { TodoItemText } from './ui/TodoItemText/TodoItemText.tsx';
-export type { TodoState, TodoItem } from './model/types.ts';
+export { TodoText } from './ui/TodoText/TodoText.tsx';
+export type { 
+    TodoState, 
+    TodoItem,
+    AddTodoFormValue
+} from './model/types.ts';
 export {
     default as todoReducer,
     addTodo,

@@ -7,3 +7,8 @@ export interface TodoItem {
     text: string;
     status: boolean;
 }
+
+export interface AddTodoFormValue {
+    label: 'add';
+    add: string;
+}

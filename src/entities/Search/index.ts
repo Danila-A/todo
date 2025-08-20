@@ -1,4 +1,4 @@
-export type { SearchType } from './model/types.ts';
+export type { SearchType, SearchFormValue } from './model/types.ts';
 export { selectMemoizedSearchValue } from './model/memoizedSelectors.ts';
 export { 
     default as searchReducer,
