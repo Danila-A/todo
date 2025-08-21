@@ -1,16 +1,18 @@
 import { useState, type FC } from "react";
 import type { FilterType } from "../../../entities/Filters";
-import { changeFilterHandler } from "../handler/changeFilterHandler";
 import styles from './FiltersButton.module.scss';
 import { ArrowIcon } from "../../../shared";
 import { contentData, selectMemoizedFilter, useAppSelector } from "../../../app";
+import { useAppDispatch } from "../../../shared/lib";
+import { changeFilter } from "../../../entities/Filter";
 
 export const FiltersButton: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const filter = useAppSelector(selectMemoizedFilter);
+    const dispatch = useAppDispatch();
 
     const handleChangeFilter = (filter: FilterType) => {
-        changeFilterHandler(filter);
+        dispatch(changeFilter({ filter }));
         setIsVisible(false);
     }
 
