@@ -5,6 +5,7 @@ export type {
 } from './model/types.ts';
 export {
     default as todoReducer,
+    selectTodos,
     addTodo,
     deleteTodo,
     toggleTodoStatus,

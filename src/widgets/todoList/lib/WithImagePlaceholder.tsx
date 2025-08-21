@@ -4,8 +4,9 @@ import { EmptyList } from "../ui/EmptyList/EmptyList";
 import { TodoList } from "../ui/TodoList/TodoList";
 
 export const WithImagePlaceholder = () => {
-    const todos = useAppSelector(selectMemoizedTodos);
     return () => {
+        const todos = useAppSelector(selectMemoizedTodos);
+        
         if (!todos) return <EmptyList />
         return <TodoList />
     }
