@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { ModalButton } from '../../../shared/ui';
+import { ModalButton } from '../ModalButton/ModalButton';
 
 export const TodoAddButton: FC = () => {
     return (

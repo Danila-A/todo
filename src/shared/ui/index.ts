@@ -14,3 +14,4 @@ export { PlusIcon } from './PlusIcon/PlusIcon.tsx';
 export { SunIcon } from './SunIcon/SunIcon.tsx';
 export { Title } from './Title/Title.tsx';
 export { TrashIcon } from './TrashIcon/TrashIcon.tsx';
+export { TodoAddButton } from './TodoAddButton/TodoAddButton.tsx';

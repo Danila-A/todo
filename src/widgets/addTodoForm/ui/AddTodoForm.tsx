@@ -1,15 +1,12 @@
 import type { FC } from 'react';
 import styles from './AddTodoForm.module.scss';
 import { Modal } from '../../../entities/Modal';
-import { Input, Title } from '../../../shared';
+import { Title } from '../../../shared';
 import { contentData, type AddTodoFormValue } from '../../../app';
-import { useForm } from 'react-hook-form';
-import { ModalCloseButton } from '../../../features/modalCloseButton';
-import { TodoAddButton } from '../../../features/todoAddButton';
-import { handleAddTodoFormSubmit } from '../handler/handleAddTodoFormSubmit';
+import { AddForm } from '../../../features/addTodo';
 
 export const AddTodoForm: FC = () => {
-    const { register, handleSubmit } = useForm<AddTodoFormValue>();
+    
     return (
         <Modal>
             <div className={styles.inner}>
@@ -17,24 +14,8 @@ export const AddTodoForm: FC = () => {
                 <div className={styles.title}>
                     <Title text={contentData.modalTitle} />
                 </div>
-                <div className={styles.formWrapper}>
-                    <form 
-                        onSubmit={handleSubmit(handleAddTodoFormSubmit)}
-                        className={styles.form}
-                    >
-                        <div className={styles.input}>
-                            <Input<AddTodoFormValue> 
-                                inputType={'add'}
-                                placeholder={'input your note...'}
-                                label={'add'}
-                                register={ register }
-                            />
-                        </div>
-                        <div className={styles.buttonsWrapper}>
-                            <ModalCloseButton />
-                            <TodoAddButton />
-                        </div>
-                    </form>
+                <div className={styles.form}>
+                    <AddForm />
                 </div>
 
             </div>

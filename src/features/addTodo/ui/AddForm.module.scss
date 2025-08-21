@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .input {
+        flex-grow: 1;
+    }
+    .buttonsContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
