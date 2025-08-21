@@ -1,14 +1,14 @@
 import type { FC } from "react";
-import { TodoItemText } from "../../../entities/Todos";
-import { TodoDeleteButton } from "../../../features/todoDeleteButton";
-import { deleteTodoHandler } from "../../../features/todoDeleteButton/handler/deleteTodoHandler";
-import { ModalOpenButton } from "../../../features/modalOpenButton";
 import styles from './TodoList.module.scss';
-import { useAppSelector, WithImagePlaceholder } from "../../../shared/lib";
-import { Checkbox } from "../../../shared/ui";
-import { selectMemoizedTodos } from "../../../features/todoAddButton";
+import { useAppSelector } from "../../../../shared/lib";
+import { selectMemoizedTodos } from "../../../../features/searchTodo";
+import { TodoStatusCheckbox } from "../../../../features/toggleTodoStatus";
+import { TodoText } from "../../../../entities/Todo";
+import { TodoDeleteButton } from "../../../../features/deleteTodo";
+import { ModalOpenButton } from "../../../../shared/ui";
+import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
 
-const TodoList: FC = () => {
+export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
 
     return (
@@ -20,14 +20,13 @@ const TodoList: FC = () => {
                         <div className={styles.listItem__inner}>
 
                             <div className={styles.listItem__checkbox}>
-                                <Checkbox
-                                    clickHandler={deleteTodoHandler} 
+                                <TodoStatusCheckbox
                                     checked={item.status}
                                     id={item.id}
                                 />
                             </div>
                             <div>
-                                <TodoItemText text={item.text} />    
+                                <TodoText text={item.text} />    
                             </div>
                             <div className={styles.listItem__deleteButton}>
                                 <TodoDeleteButton id={item.id} />
@@ -45,4 +44,4 @@ const TodoList: FC = () => {
     );
 }
 
-export const TodoListWithImagePlaceholder = WithImagePlaceholder(TodoList);
+export const TodoListWithImagePlaceholder = WithImagePlaceholder();
