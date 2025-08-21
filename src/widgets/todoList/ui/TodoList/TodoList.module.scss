@@ -2,7 +2,10 @@
 
 .main {
     width: global.$contentWidth;
+    margin: 0 auto;
+    height: 100%;
     &__inner {
+        height: inherit;
         padding-top: 30px;
         position: relative;
         .listItem {
