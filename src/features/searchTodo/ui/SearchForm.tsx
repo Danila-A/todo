@@ -1,14 +1,15 @@
 import type { FC } from 'react';
 import styles from './SearchForm.module.scss';
-import { Input, LensIcon } from '../../../shared';
-import type { SearchFormValue } from '../../../app';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import { useAppDispatch } from '../../../shared/lib';
-import { setSearchValue } from '../../../entities/Search';
+import { useAppDispatch, useAppSelector } from '../../../shared/lib';
+import { setSearchValue, type SearchFormValue } from '../../../entities/Search';
+import { Input, LensIcon } from '../../../shared/ui';
+import { selectMemoizedTheme } from '../../../entities/Theme';
 
 export const SearchForm: FC = () => {
     const { register, handleSubmit } = useForm<SearchFormValue>();
     const dispatch = useAppDispatch();
+    const themeType = useAppSelector(selectMemoizedTheme);
 
     const handleSearchFormSubmit: SubmitHandler<SearchFormValue> = (data) => {
         if (!data.search.trim()) return;
@@ -24,6 +25,7 @@ export const SearchForm: FC = () => {
                         placeholder={ 'Search note...' }
                         label={ 'search' }
                         register={ register }
+                        themeType={themeType}
                     />
                     <div className={ styles.buttonWrapper }>
                         <button type='submit'>

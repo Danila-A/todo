@@ -4,11 +4,13 @@ import { Input, ModalCloseButton } from '../../../shared/ui';
 import { addTodo, type AddTodoFormValue } from '../../../entities/Todo';
 import { TodoAddButton } from '../../../shared/ui';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import { useAppDispatch } from '../../../shared/lib';
+import { useAppDispatch, useAppSelector } from '../../../shared/lib';
+import { selectMemoizedTheme } from '../../../entities/Theme';
 
 export const AddForm: FC = () => {
     const { register, handleSubmit } = useForm<AddTodoFormValue>();
     const dispatch = useAppDispatch();
+    const themeType = useAppSelector(selectMemoizedTheme);
     
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
         if (!data.add.trim()) return;
@@ -26,6 +28,7 @@ export const AddForm: FC = () => {
                     placeholder={'input your note...'}
                     label={'add'}
                     register={ register }
+                    themeType={themeType}
                 />
             </div>
             <div className={styles.buttonsContainer}>

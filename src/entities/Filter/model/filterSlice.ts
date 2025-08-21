@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { FilterState, FilterType } from "./types";
+import type { FilterState } from "./types";
 
 const initialState: FilterState = {
     value: 'all',

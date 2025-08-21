@@ -1,10 +1,8 @@
 import type { FC } from 'react';
 import styles from './ThemeButton.module.scss';
-import { selectMemoizedTheme, useAppSelector } from '../../../app';
-import { MoonIcon } from '../../../shared';
-import { SunIcon } from '../../../shared/ui/SunIcon/SunIcon';
-import { useAppDispatch } from '../../../shared/lib';
-import { toggleTheme } from '../../../entities/Theme';
+import { useAppDispatch, useAppSelector } from '../../../shared/lib';
+import { selectMemoizedTheme, toggleTheme } from '../../../entities/Theme';
+import { MoonIcon, SunIcon } from '../../../shared/ui';
 
 export const ThemeButton: FC = () => {
     const themeType = useAppSelector(selectMemoizedTheme);

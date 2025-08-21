@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import { Image } from '../../../../shared';
 import styles from './EmptyImage.module.scss';
+import { Image } from '../Image/Image';
 
 interface Props {
     text: string;

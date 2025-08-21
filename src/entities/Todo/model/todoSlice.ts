@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { TodoItem, TodoState } from "./types";
+import type { TodoState } from "./types";
 import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
 
 const initialState: TodoState = {

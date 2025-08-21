@@ -1,18 +1,23 @@
 import type { FC } from 'react';
 import styles from './AddTodoForm.module.scss';
-import { Modal } from '../../../entities/Modal';
-import { Title } from '../../../shared';
-import { contentData, type AddTodoFormValue } from '../../../app';
 import { AddForm } from '../../../features/addTodo';
+import { Modal, Title } from '../../../shared/ui';
+import { contentData } from '../../../shared/staticContent';
+import { useAppSelector } from '../../../shared/lib';
+import { selectMemoizedTheme } from '../../../entities/Theme';
 
 export const AddTodoForm: FC = () => {
-    
+    const themeType = useAppSelector(selectMemoizedTheme);
+
     return (
         <Modal>
             <div className={styles.inner}>
 
                 <div className={styles.title}>
-                    <Title text={contentData.modalTitle} />
+                    <Title 
+                        text={contentData.modalTitle}
+                        themeType={themeType}
+                    />
                 </div>
                 <div className={styles.form}>
                     <AddForm />

@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { TrashIcon } from "../../../shared";
 import styles from './TodoDeleteButton.module.scss';
 import { useAppDispatch } from "../../../shared/lib";
 import { deleteTodo } from "../../../entities/Todo";
+import { TrashIcon } from "../../../shared/ui";
 
 interface Props {
     id: number;

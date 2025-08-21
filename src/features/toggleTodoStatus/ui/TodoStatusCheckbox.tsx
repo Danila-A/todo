@@ -1,7 +1,7 @@
 import type { FC } from "react";
-import { Checkbox } from "../../../shared";
 import { useAppDispatch } from "../../../shared/lib";
 import { toggleTodoStatus } from "../../../entities/Todo";
+import { Checkbox } from "../../../shared/ui";
 
 interface Props {
     id: number;
@@ -17,7 +17,8 @@ export const TodoStatusCheckbox: FC<Props> = ({ id, checked }) => {
 
     return (
         <div>
-            <Checkbox 
+            <Checkbox
+                id={id}
                 clickHandler={ () => toggleStatusHandler(id) }
                 checked={ checked }
             />

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { ThemeState, ThemeType } from "./types";
+import type { ThemeState } from "./types";
 import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
 
 const initialState: ThemeState = {
