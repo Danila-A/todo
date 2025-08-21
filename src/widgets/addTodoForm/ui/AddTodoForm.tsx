@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import styles from './AddTodoForm.module.scss';
 import { AddForm } from '../../../features/addTodo';
-import { Modal, Title } from '../../../shared/ui';
+import { Modal, ModalCloseButton, Title } from '../../../shared/ui';
 import { contentData } from '../../../shared/staticContent';
 import { useAppSelector } from '../../../shared/lib';
 import { selectMemoizedTheme } from '../../../entities/Theme';
@@ -21,6 +21,9 @@ export const AddTodoForm: FC = () => {
                 </div>
                 <div className={styles.form}>
                     <AddForm />
+                </div>
+                <div className={styles.closeButton}>
+                    <ModalCloseButton />
                 </div>
 
             </div>

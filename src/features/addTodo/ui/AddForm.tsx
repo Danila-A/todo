@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styles from './AddForm.module.scss';
-import { Input, ModalCloseButton } from '../../../shared/ui';
+import { Input } from '../../../shared/ui';
 import { addTodo, type AddTodoFormValue } from '../../../entities/Todo';
 import { TodoAddButton } from '../../../shared/ui';
 import { useForm, type SubmitHandler } from 'react-hook-form';
@@ -32,7 +32,6 @@ export const AddForm: FC = () => {
                 />
             </div>
             <div className={styles.buttonsContainer}>
-                <ModalCloseButton />
                 <TodoAddButton />
             </div>
         </form>
