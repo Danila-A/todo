@@ -4,13 +4,20 @@
     width: 500px;
     height: 289px;
     border-radius: 16px;
-    background-color: global.$lightThemeColor;
     padding-top: 18px;
     padding-bottom: 18px;
     padding-right: 30px;
     padding-left: 30px;
+    border: none;
     &::backdrop {
         background-color: global.$modalBackdropColor;
+    }
+    &__dark {
+        background-color: global.$darkThemeColor;
+        border: 1px solid global.$darkThemeTextColor;
+    }
+    &__light {
+        background-color: global.$lightThemeColor;
     }
     @media (max-width:500px) {
         width: 100%;

@@ -5,7 +5,13 @@
     font-size: global.$secondTextFontSize;
     color: global.$lightThemeTextColor;
     font-weight: 500;
-    &.checked {
+    &__checked {
         text-decoration: line-through;
+    }
+    &__light {
+        color: global.$lightThemeTextColor;
+    }
+    &__dark {
+        color: global.$darkThemeTextColor;
     }
 }

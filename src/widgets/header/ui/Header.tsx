@@ -20,13 +20,13 @@ export const Header: FC = () => {
                 />
             </div>
             <div className={styles.controlGroup}>
-                <div className={styles.searchBlock}>
+                <div className={`${styles.controlGroup__block} ${styles.searchBlock}`}>
                     <SearchForm />
                 </div>
-                <div>
+                <div className={styles.controlGroup__block}>
                     <FiltersButton />
                 </div>
-                <div>
+                <div className={styles.controlGroup__block}>
                     <ThemeButton />
                 </div>
             </div>

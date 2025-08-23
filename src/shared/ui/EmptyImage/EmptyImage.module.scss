@@ -5,5 +5,10 @@
 }
 .caption {
     text-align: center;
-    color: global.$secondTextFontSize;
+    &__light {
+        color: global.$lightThemeTextColor;
+    }
+    &__dark {
+        color: global.$darkThemeTextColor;
+    }
 }

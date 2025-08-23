@@ -4,20 +4,23 @@
     width: global.$contentWidth;
     margin: 0 auto;
     height: 100%;
+    position: relative;
     &__inner {
         height: inherit;
         padding-top: 30px;
-        position: relative;
         .listItem {
             border-bottom: 1px solid global.$mainColor;
+            margin-bottom: 17px;
             &:last-child {
-                border-bottom: none;
+                border: none;
+                margin-bottom: 0;
             }
             &__inner {
                 padding-bottom: 17px;
                 position: relative;
                 width: 100%;
                 display: flex;
+                align-items: center;
                 .listItem__checkbox {
                     margin-right: 7px;
                 }
@@ -28,14 +31,16 @@
                     top: 4px;
                 }
             }
-            &:hover.listItem__deleteButton {
-                opacity: 1;
+            &:hover {
+                .listItem__deleteButton{
+                    opacity: 1;
+                }
             }
         }
-        .main__modalOpenButton {
-            position: absolute;
-            right: 8px;
-            bottom: 32px;
-        }
+    }
+    .main__modalOpenButton {
+        position: absolute;
+        right: 8px;
+        bottom: 32px;
     }
 }

@@ -1,49 +1,68 @@
 @use '../../../app/Styles/Variables.scss' as global;
 
 .wrapper {
-    border: 2px solid global.$mainColor;
-    background-color: global.$mainColor;
-    box-shadow: 0 0 4px global.$mainColor;
-    color: global.$lightThemeColor;
-    border-radius: 5px;
-    .inner {
-        padding: 10px;
+    position: relative;
+    .button {
+        border: 2px solid global.$mainColor;
+        background-color: global.$mainColor;
+        color: global.$lightThemeColor;
+        border-radius: 5px;
+        cursor: pointer;
+        box-sizing: border-box !important; 
+        min-width: 100px;
+        height: 38px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        position: relative;
-        .text {
-            text-transform: uppercase;
-            font-weight: 500;
-            font-size: global.$filtersButtonTextSize;
+        
+        &:hover {
+            background-color: global.$darkMainColor;
         }
-        .arrow {
-            color: inherit;
-            &_rotated {
-                transform: rotate(180deg);
+        .inner {
+            flex-grow: 1;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .text {
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: global.$filtersButtonTextSize;
+                margin-right: 10px;
             }
-        }
-        .filtersList {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: inherit;
-            background-color: global.$lightThemeColor;
-            border: 1px solid global.$mainColor;
-            border-radius: 5px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-            .item {
-                color: global.$mainColor;
-                font-size: global.$textFontSize;
-                padding-right: 6px;
-                padding-left: 6px;
-                text-transform: capitalize;
-                cursor: pointer;
-                &:hover {
-                    background-color: global.$halfTransparentMainColor;
-                }   
+            .arrow {
+                color: inherit;
+                transform: rotate(180deg);
+                &_rotated {
+                    transform: rotate(0deg);
+                }
             }
         }
     }
+    .filtersList {
+        position: absolute;
+        left: 0px;
+        bottom: 0;
+        transform: translateY(100%);
+        z-index: 1;
+        width: 100%;
+        background-color: global.$lightThemeColor;
+        border: 1px solid global.$mainColor;
+        border-radius: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        .item {
+            color: global.$mainColor;
+            font-size: global.$textFontSize;
+            padding-right: 6px;
+            padding-left: 6px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            text-transform: capitalize;
+            cursor: pointer;
+            &:hover {
+                background-color: global.$halfTransparentMainColor;
+            }   
+        }
+    }
 }
+

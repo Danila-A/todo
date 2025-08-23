@@ -5,6 +5,11 @@
     height: 38px;
     border-radius: 5px;
     background-color: global.$mainColor;
+    cursor: pointer;
+    &:hover {
+        background-color: global.$darkMainColor;
+        box-shadow: 0 0 4px 0 global.$mainColor;
+    }
     .inner {
         padding: 8px;
         display: flex;

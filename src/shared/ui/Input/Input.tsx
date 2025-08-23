@@ -15,13 +15,11 @@ export const Input = <T extends FieldValues, >({ inputType, placeholder, label, 
     const themeTypeClass: string = themeType == 'light' ? styles.input_light : styles.input_dark;
 
     return (
-        <div>
-            <input 
-                type="text"  
-                placeholder={placeholder} 
-                className={ `${inputTypeClass} ${themeTypeClass}` } 
-                { ...register(label) }
-            />
-        </div>
+        <input
+            type="text"  
+            placeholder={placeholder} 
+            className={ `${styles.input} ${inputTypeClass} ${themeTypeClass}` } 
+            { ...register(label) }
+        />
     );
 }

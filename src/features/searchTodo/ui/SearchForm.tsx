@@ -28,8 +28,11 @@ export const SearchForm: FC = () => {
                         themeType={themeType}
                     />
                     <div className={ styles.buttonWrapper }>
-                        <button type='submit'>
-                            <LensIcon />
+                        <button 
+                            className={styles.button}
+                            type='submit'
+                        >
+                            <LensIcon themeType={themeType} />
                         </button>
                     </div>
                 </div>

@@ -7,9 +7,11 @@ import { TodoText } from "../../../../entities/Todo";
 import { TodoDeleteButton } from "../../../../features/deleteTodo";
 import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
+import { selectMemoizedTheme } from "../../../../entities/Theme";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
+    const themeType = useAppSelector(selectMemoizedTheme);
 
     return (
         <main className={styles.main}>
@@ -26,7 +28,11 @@ export const TodoList: FC = () => {
                                 />
                             </div>
                             <div>
-                                <TodoText text={item.text} />    
+                                <TodoText 
+                                    text={item.text}
+                                    checked={item.status}
+                                    themeType={themeType}
+                                />
                             </div>
                             <div className={styles.listItem__deleteButton}>
                                 <TodoDeleteButton id={item.id} />
@@ -35,10 +41,10 @@ export const TodoList: FC = () => {
                         </div>
                     </div>
                 ))}
-
-                <div className={styles.main__modalOpenButton}>
-                    <ModalOpenButton />
-                </div>
+                
+            </div>
+            <div className={styles.main__modalOpenButton}>
+                <ModalOpenButton />
             </div>
         </main>
     );

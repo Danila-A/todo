@@ -18,12 +18,16 @@ export const FiltersButton: FC = () => {
     const arrowClasses = isVisible ? `${styles.arrow}` : `${styles.arrow} ${styles.arrow_rotated}`;
 
     return (
-        <div className={ styles.wrapper } onClick={() => setIsVisible(!isVisible)}>
-            <div className={ styles.inner }>
-                <div className={ styles.text }>{ filter }</div>
-                <div className={ arrowClasses }>
-                    <ArrowIcon />
+        <div className={ styles.wrapper }>
+            <div className={ styles.button } onClick={() => setIsVisible(!isVisible)}>
+                <div className={ styles.inner }>
+                    <div className={ styles.text }>{ filter }</div>
+                    <div className={ arrowClasses }>
+                        <ArrowIcon />
+                    </div>
                 </div>
+            </div>
+            {isVisible && 
                 <div className={ styles.filtersList }>
                     {contentData.filters.map((item) => (
                         <div 
@@ -35,7 +39,7 @@ export const FiltersButton: FC = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            }
         </div>
     );
 }

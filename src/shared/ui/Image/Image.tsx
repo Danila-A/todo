@@ -1,11 +1,15 @@
 import type { FC } from "react";
 import styles from './Image.module.scss';
 
-export const Image: FC = () => {
+interface Props {
+    imagePath: string;
+}
+
+export const Image: FC<Props> = ({ imagePath }) => {
     return (
         <img 
-            src="../../assets/Detective-check-footprint 1.png" 
-            alt="empty image" 
+            src={imagePath} 
+            alt="empty image"
             className={ styles.img } 
         />
     );

@@ -5,7 +5,12 @@
         .buttonWrapper {
             position: absolute;
             right: 16px;
-            top: 8px;
+            top: 7px;
+            .button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
         }
     }
 }

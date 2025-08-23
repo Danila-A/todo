@@ -10,7 +10,7 @@ export const AddTodoForm: FC = () => {
     const themeType = useAppSelector(selectMemoizedTheme);
 
     return (
-        <Modal>
+        <Modal themeType={themeType}>
             <div className={styles.inner}>
 
                 <div className={styles.title}>
