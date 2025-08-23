@@ -1,16 +1,12 @@
 export { ArrowIcon } from './ArrowIcon/ArrowIcon.tsx';
 export { Checkbox } from './Checkbox/Checkbox.tsx';
 export { EmptyImage } from './EmptyImage/EmptyImage.tsx';
-export { Image } from './Image/Image.tsx';
 export { Input } from './Input/Input.tsx';
 export { LensIcon } from './LensIcon/LensIcon.tsx';
 export { Modal } from './Modal/Modal.tsx';
-export { ModalButton } from './ModalButton/ModalButton.tsx';
 export { ModalCloseButton } from './ModalCloseButton/ModalCloseButton.tsx';
 export { ModalOpenButton } from './ModalOpenButton/ModalOpenButton.tsx';
 export { MoonIcon } from './MoonIcon/MoonIcon.tsx';
-export { PencilIcon } from './PencilIcon/PencilIcon.tsx';
-export { PlusIcon } from './PlusIcon/PlusIcon.tsx';
 export { SunIcon } from './SunIcon/SunIcon.tsx';
 export { Title } from './Title/Title.tsx';
 export { TodoAddButton } from './TodoAddButton/TodoAddButton.tsx';

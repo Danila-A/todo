@@ -8,13 +8,14 @@ import { useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { selectMemoizedTheme } from '../../../entities/Theme';
 
 export const AddForm: FC = () => {
-    const { register, handleSubmit } = useForm<AddTodoFormValue>();
+    const { register, handleSubmit, setValue } = useForm<AddTodoFormValue>();
     const dispatch = useAppDispatch();
     const themeType = useAppSelector(selectMemoizedTheme);
     
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
         if (!data.add.trim()) return;
         dispatch(addTodo({ text: data.add }));
+        setValue('add', '');
     }
 
     return (

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styles from './Checkbox.module.scss';
-import imagePath from '../../assets/Check_mark.png';
+import { CheckMark } from '../CheckMark/CheckMark';
 
 interface Props {
     clickHandler: (id: number) => void;
@@ -16,14 +16,7 @@ export const Checkbox: FC<Props> = ({ clickHandler, checked, id}) => {
             onClick={() => clickHandler(id)}
             className={`${styles.checkbox} ${CheckboxCheckedClass}`}
         >
-            {checked && 
-                <img 
-                    src={imagePath} 
-                    alt="Check"
-                    className={styles.check_mark}
-                />
-            }
-            
+            {checked && <CheckMark />}
         </div>
     );
 }

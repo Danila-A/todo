@@ -9,14 +9,20 @@ interface Props<T extends FieldValues> {
     themeType: ThemeType;
 }
 
-export const Input = <T extends FieldValues, >({ inputType, placeholder, label, register, themeType }: Props<T>) => {
+export const Input = <T extends FieldValues, >({ 
+    inputType, 
+    placeholder, 
+    label, 
+    register, 
+    themeType,
+}: Props<T>) => {
 
     const inputTypeClass: string = inputType == 'search' ? styles.input_search : styles.input_add;
     const themeTypeClass: string = themeType == 'light' ? styles.input_light : styles.input_dark;
 
     return (
         <input
-            type="text"  
+            type="text"
             placeholder={placeholder} 
             className={ `${styles.input} ${inputTypeClass} ${themeTypeClass}` } 
             { ...register(label) }
