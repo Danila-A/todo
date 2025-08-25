@@ -7,13 +7,17 @@ import { Input, LensIcon } from '../../../shared/ui';
 import { selectMemoizedTheme } from '../../../entities/Theme';
 
 export const SearchForm: FC = () => {
-    const { register, handleSubmit } = useForm<SearchFormValue>();
+    const { register, handleSubmit, getValues } = useForm<SearchFormValue>();
     const dispatch = useAppDispatch();
     const themeType = useAppSelector(selectMemoizedTheme);
 
     const handleSearchFormSubmit: SubmitHandler<SearchFormValue> = (data) => {
         if (!data.search.trim()) return;
         dispatch(setSearchValue({ value: data.search }));
+    }
+
+    const handleSearchReset = () => {
+        if (!getValues('search')) dispatch(setSearchValue({ value: '' }));
     }
     
     return (
@@ -25,6 +29,7 @@ export const SearchForm: FC = () => {
                         placeholder={ 'Search note...' }
                         label={ 'search' }
                         register={ register }
+                        onChange={handleSearchReset}
                         themeType={themeType}
                     />
                     <div className={ styles.buttonWrapper }>

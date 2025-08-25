@@ -6,6 +6,7 @@ interface Props<T extends FieldValues> {
     placeholder: string;
     label: Path<T>;
     register: UseFormRegister<T>;
+    onChange?: () => void
     themeType: ThemeType;
 }
 
@@ -14,6 +15,7 @@ export const Input = <T extends FieldValues, >({
     placeholder, 
     label, 
     register, 
+    onChange,
     themeType,
 }: Props<T>) => {
 
@@ -25,7 +27,7 @@ export const Input = <T extends FieldValues, >({
             type="text"
             placeholder={placeholder} 
             className={ `${styles.input} ${inputTypeClass} ${themeTypeClass}` } 
-            { ...register(label) }
+            { ...register(label, { onChange: onChange }) }
         />
     );
 }
