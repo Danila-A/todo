@@ -3,6 +3,5 @@ export { selectMemoizedTheme } from './model/memoizedSelectors.ts';
 export { 
     default as themeReducer, 
     toggleTheme,
-    retrieveThemeTypeFromLocalStorage,
     saveThemeTypeToLocalStorage
 } from './model/themesSlice';

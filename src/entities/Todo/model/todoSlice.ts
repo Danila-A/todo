@@ -3,7 +3,7 @@ import type { TodoState } from "./types";
 import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
 
 const initialState: TodoState = {
-    todoList: [],
+    todoList: getDataFromLocalStorage<TodoItem[]>('todos'),
 }
 
 const todoSlice = createSlice({
@@ -34,10 +34,6 @@ const todoSlice = createSlice({
                 setDataToLocalStorage<TodoItem[]>(state.todoList, 'todos');
             }
         },
-        retrieveTodosFromLocalStorage(state) {
-            const todos = getDataFromLocalStorage<TodoItem[]>('todos');
-            if (todos) state.todoList = todos;
-        },
         saveTodosToLocalStorage(state) {
             setDataToLocalStorage<TodoItem[] | null>(state.todoList, 'todos');
         },
@@ -48,7 +44,6 @@ export const {
     addTodo, 
     deleteTodo, 
     toggleTodoStatus, 
-    retrieveTodosFromLocalStorage, 
     saveTodosToLocalStorage 
 } = todoSlice.actions;
 export const { selectTodos } = todoSlice.selectors;

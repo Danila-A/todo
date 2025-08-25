@@ -2,8 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { ThemeState } from "./types";
 import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
 
+const themeType = getDataFromLocalStorage<ThemeType>('theme');
+
 const initialState: ThemeState = {
-    theme: 'light'
+    theme: themeType ? themeType : 'light'
 }
 
 const themeSlice = createSlice({
@@ -22,10 +24,6 @@ const themeSlice = createSlice({
                 setDataToLocalStorage<ThemeType>('light', 'theme');
             }            
         },
-        retrieveThemeTypeFromLocalStorage(state) {
-            const localStorageThemeType = getDataFromLocalStorage<ThemeType>('theme');
-            if (localStorageThemeType) state.theme = localStorageThemeType;
-        },
         saveThemeTypeToLocalStorage(state) {
             setDataToLocalStorage<ThemeType>(state.theme, 'theme');
         }
@@ -33,8 +31,7 @@ const themeSlice = createSlice({
 });
 
 export const { 
-    toggleTheme, 
-    retrieveThemeTypeFromLocalStorage, 
+    toggleTheme,
     saveThemeTypeToLocalStorage 
 } = themeSlice.actions;
 export const { selectTheme } = themeSlice.selectors;
