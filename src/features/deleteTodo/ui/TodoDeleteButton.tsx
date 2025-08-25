@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import styles from './TodoDeleteButton.module.scss';
 import { useAppDispatch } from "../../../shared/lib";
-import { deleteTodo } from "../../../entities/Todo";
+import { deleteTodo, saveTodosToLocalStorage } from "../../../entities/Todo";
 import { TrashIcon } from "../../../shared/ui";
 
 interface Props {
@@ -13,6 +13,7 @@ export const TodoDeleteButton: FC<Props> = ({ id }) => {
 
     const deleteTodoHandler = (id: number) => {
         dispatch(deleteTodo({ id }));
+        dispatch(saveTodosToLocalStorage());
     }
 
     return (

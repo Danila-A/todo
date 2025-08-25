@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import styles from './AddForm.module.scss';
 import { Input } from '../../../shared/ui';
-import { addTodo, type AddTodoFormValue } from '../../../entities/Todo';
+import { addTodo, saveTodosToLocalStorage, type AddTodoFormValue } from '../../../entities/Todo';
 import { TodoAddButton } from '../../../shared/ui';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
@@ -15,6 +15,7 @@ export const AddForm: FC = () => {
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
         if (!data.add.trim()) return;
         dispatch(addTodo({ text: data.add }));
+        dispatch(saveTodosToLocalStorage());
         setValue('add', '');
     }
 

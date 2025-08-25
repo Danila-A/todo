@@ -9,5 +9,6 @@ export {
     addTodo,
     deleteTodo,
     toggleTodoStatus,
-    retrieveTodosFromLocalStorage
+    retrieveTodosFromLocalStorage,
+    saveTodosToLocalStorage
 } from './model/todoSlice.ts';

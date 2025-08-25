@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useAppDispatch } from "../../../shared/lib";
-import { toggleTodoStatus } from "../../../entities/Todo";
+import { saveTodosToLocalStorage, toggleTodoStatus } from "../../../entities/Todo";
 import { Checkbox } from "../../../shared/ui";
 
 interface Props {
@@ -13,6 +13,7 @@ export const TodoStatusCheckbox: FC<Props> = ({ id, checked }) => {
 
     const toggleStatusHandler = (id: number) => {
         dispatch(toggleTodoStatus({ id }));
+        dispatch(saveTodosToLocalStorage());
     }
 
     return (

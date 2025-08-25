@@ -25,10 +25,17 @@ const themeSlice = createSlice({
         retrieveThemeTypeFromLocalStorage(state) {
             const localStorageThemeType = getDataFromLocalStorage<ThemeType>('theme');
             if (localStorageThemeType) state.theme = localStorageThemeType;
+        },
+        saveThemeTypeToLocalStorage(state) {
+            setDataToLocalStorage<ThemeType>(state.theme, 'theme');
         }
     },
 });
 
-export const { toggleTheme, retrieveThemeTypeFromLocalStorage } = themeSlice.actions;
+export const { 
+    toggleTheme, 
+    retrieveThemeTypeFromLocalStorage, 
+    saveThemeTypeToLocalStorage 
+} = themeSlice.actions;
 export const { selectTheme } = themeSlice.selectors;
 export default themeSlice.reducer;
