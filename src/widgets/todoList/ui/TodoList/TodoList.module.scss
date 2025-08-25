@@ -5,6 +5,13 @@
     margin: 0 auto;
     height: 100%;
     position: relative;
+    flex-grow: 1;
+    @media (max-width: 500px) {
+        width: 100%;
+        margin: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     &__inner {
         height: inherit;
         padding-top: 30px;
@@ -39,8 +46,11 @@
         }
     }
     .main__modalOpenButton {
-        position: absolute;
-        right: 8px;
+        position: fixed;
+        right: 15%;
         bottom: 32px;
+        @media (max-width: 500px) {
+            right: 8px;
+        }
     }
 }
