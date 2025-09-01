@@ -13,15 +13,15 @@ export const ArrowIcon: FC = () => {
             <path
                 d="M4 4L1 1"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className={ styles.path }
             />
             <path
                 d="M7 1L4 4"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className={ styles.path }
             />
         </svg>

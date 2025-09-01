@@ -8,6 +8,7 @@
     border-radius: 5px;
     text-transform: uppercase;
     border: 1px solid global.$mainColor;
+    cursor: pointer;
     &_cancel {
         background-color: transparent;
         color: global.$mainColor;

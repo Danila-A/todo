@@ -1,0 +1,8 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.path__light {
+    color: global.$mainColor;
+}
+.path__dark {
+    color: global.$darkThemeTextColor;
+}

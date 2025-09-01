@@ -1,0 +1,20 @@
+@use '../../../../app/Styles/Variables.scss' as global;
+
+.main {
+    width: global.$contentWidth;
+    margin: 0 auto;
+    height: 100%;
+    &__inner {
+        height: inherit;
+        padding-top: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+    }
+    &__modalOpenButton {
+        position: absolute;
+        right: 8px;
+        bottom: 32px;
+    }
+}

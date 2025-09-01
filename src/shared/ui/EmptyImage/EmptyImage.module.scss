@@ -1,0 +1,14 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.imageBlock {
+    margin-bottom: 20px;
+}
+.caption {
+    text-align: center;
+    &__light {
+        color: global.$lightThemeTextColor;
+    }
+    &__dark {
+        color: global.$darkThemeTextColor;
+    }
+}

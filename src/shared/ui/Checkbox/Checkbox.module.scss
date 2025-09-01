@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding-bottom: 3px;
     &_checked {
         background-color: global.$mainColor;
     }

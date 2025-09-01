@@ -4,7 +4,10 @@
     .path {
         color: global.$unActiveIconColor;
     }
-    &:hover.path {
-        color: global.$trashActiveColor;
+    &:hover {
+        .path {
+            color: global.$trashActiveColor;
+        }
     }
 }
+

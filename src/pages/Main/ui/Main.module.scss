@@ -1,0 +1,13 @@
+@use '../../../app/Styles/Variables.scss' as global;
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    &__dark {
+        background-color: global.$darkThemeColor;
+    }
+    &__light {
+        background-color: global.$lightThemeColor;
+    }
+}
