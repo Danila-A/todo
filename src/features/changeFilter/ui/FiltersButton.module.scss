@@ -1,21 +1,20 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss' as *;
 
 .wrapper {
     position: relative;
     .button {
-        border: 2px solid global.$mainColor;
-        background-color: global.$mainColor;
-        color: global.$lightThemeColor;
+        border: 2px solid $mainColor;
+        background-color: $mainColor;
+        color: $lightThemeColor;
         border-radius: 5px;
         cursor: pointer;
-        box-sizing: border-box !important; 
-        min-width: 100px;
+        min-width: 110px;
         height: 38px;
         display: flex;
         align-items: center;
         
         &:hover {
-            background-color: global.$darkMainColor;
+            background-color: $darkMainColor;
         }
         .inner {
             flex-grow: 1;
@@ -26,7 +25,7 @@
             .text {
                 text-transform: uppercase;
                 font-weight: 500;
-                font-size: global.$filtersButtonTextSize;
+                font-size: $buttonFontSize;
                 margin-right: 10px;
             }
             .arrow {
@@ -45,14 +44,14 @@
         transform: translateY(100%);
         z-index: 1;
         width: 100%;
-        background-color: global.$lightThemeColor;
-        border: 1px solid global.$mainColor;
+        background-color: $lightThemeColor;
+        border: 1px solid $mainColor;
         border-radius: 5px;
         padding-top: 2px;
         padding-bottom: 2px;
         .item {
-            color: global.$mainColor;
-            font-size: global.$textFontSize;
+            color: $mainColor;
+            font-size: $buttonFontSize;
             padding-right: 6px;
             padding-left: 6px;
             padding-top: 4px;
@@ -60,7 +59,7 @@
             text-transform: capitalize;
             cursor: pointer;
             &:hover {
-                background-color: global.$halfTransparentMainColor;
+                background-color: $halfTransparentMainColor;
             }   
         }
     }

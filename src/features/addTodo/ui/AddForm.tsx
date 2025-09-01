@@ -5,12 +5,12 @@ import { addTodo, saveTodosToLocalStorage, type AddTodoFormValue } from '../../.
 import { TodoAddButton } from '../../../shared/ui';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { selectMemoizedTheme } from '../../../entities/Theme';
+import { selectTheme } from '../../../entities/Theme';
 
 export const AddForm: FC = () => {
     const { register, handleSubmit, setValue } = useForm<AddTodoFormValue>();
     const dispatch = useAppDispatch();
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
     
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
         if (!data.add.trim()) return;

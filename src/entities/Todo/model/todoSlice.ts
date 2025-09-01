@@ -1,14 +1,10 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { TodoState } from "./types";
-import { getDataFromLocalStorage, setDataToLocalStorage } from "../../../shared/lib";
-
-const initialState: TodoState = {
-    todoList: getDataFromLocalStorage<TodoItem[]>('todos'),
-}
+import { setDataToLocalStorage } from "../../../shared/lib";
+import { getInitialState } from "../lib/getInitialState";
 
 const todoSlice = createSlice({
     name: 'todo',
-    initialState,
+    initialState: getInitialState(),
     selectors: {
         selectTodos: (state) => state.todoList,
     },

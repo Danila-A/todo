@@ -6,6 +6,7 @@ export const ModalOpenButton: FC = () => {
 
     const openModalHandler = () => {
         (document.getElementById('modal') as HTMLDialogElement).showModal();
+        (document.querySelector('body') as HTMLBodyElement)?.classList.add('no-scroll');
     }
 
     return (

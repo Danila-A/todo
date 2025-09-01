@@ -3,13 +3,13 @@ import styles from './Header.module.scss';
 import { Title } from '../../../shared/ui';
 import { contentData } from '../../../shared/staticContent';
 import { useAppSelector } from '../../../shared/lib';
-import { selectMemoizedTheme } from '../../../entities/Theme';
+import { selectTheme } from '../../../entities/Theme';
 import { SearchForm } from '../../../features/searchTodo';
 import { FiltersButton } from '../../../features/changeFilter';
 import { ThemeButton } from '../../../features/toggleTheme';
 
 export const Header: FC = () => {
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     return (
         <header className={styles.header}>

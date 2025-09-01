@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import styles from './ThemeButton.module.scss';
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
-import { saveThemeTypeToLocalStorage, selectMemoizedTheme, toggleTheme } from '../../../entities/Theme';
+import { saveThemeTypeToLocalStorage, selectTheme, toggleTheme } from '../../../entities/Theme';
 import { MoonIcon, SunIcon } from '../../../shared/ui';
 
 export const ThemeButton: FC = () => {
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
     const dispatch = useAppDispatch();
 
     const toggleThemeHandler = () => {

@@ -1,4 +1,4 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss' as *;
 
 .wrapper {
     width: 50px;
@@ -7,10 +7,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 2px solid global.$mainColor;
-    background-color: global.$mainColor;
-    box-shadow: 0 0 4px global.$mainColor;
+    border: 2px solid $mainColor;
+    background-color: $mainColor;
+    box-shadow: 0 0 4px $mainColor;
     &:hover {
-        background-color: global.$darkMainColor;
+        background-color: $darkMainColor;
     }
 }

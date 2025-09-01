@@ -1,14 +1,14 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss' as *;
 
 .wrapper {
     width: 38px;
     height: 38px;
     border-radius: 5px;
-    background-color: global.$mainColor;
+    background-color: $mainColor;
     cursor: pointer;
     &:hover {
-        background-color: global.$darkMainColor;
-        box-shadow: 0 0 4px 0 global.$mainColor;
+        background-color: $darkMainColor;
+        box-shadow: 0 0 4px 0 $mainColor;
     }
     .inner {
         padding: 8px;

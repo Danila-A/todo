@@ -3,10 +3,10 @@ import styles from './EmptyList.module.scss';
 import { EmptyImage, ModalOpenButton } from '../../../../shared/ui';
 import { contentData } from '../../../../shared/staticContent';
 import { useAppSelector } from '../../../../shared/lib';
-import { selectMemoizedTheme } from '../../../../entities/Theme';
+import { selectTheme } from '../../../../entities/Theme';
 
 export const EmptyList: FC = () => {
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     return (
         <main className={styles.main}>

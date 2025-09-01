@@ -4,10 +4,10 @@ import { AddForm } from '../../../features/addTodo';
 import { Modal, ModalCloseButton, Title } from '../../../shared/ui';
 import { contentData } from '../../../shared/staticContent';
 import { useAppSelector } from '../../../shared/lib';
-import { selectMemoizedTheme } from '../../../entities/Theme';
+import { selectTheme } from '../../../entities/Theme';
 
 export const AddTodoForm: FC = () => {
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     return (
         <Modal themeType={themeType}>

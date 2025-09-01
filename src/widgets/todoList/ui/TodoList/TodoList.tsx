@@ -7,11 +7,11 @@ import { TodoText } from "../../../../entities/Todo";
 import { TodoDeleteButton } from "../../../../features/deleteTodo";
 import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
-import { selectMemoizedTheme } from "../../../../entities/Theme";
+import { selectTheme } from "../../../../entities/Theme";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     return (
         <main className={styles.main}>

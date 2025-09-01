@@ -4,12 +4,12 @@ import { useForm, type SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { setSearchValue, type SearchFormValue } from '../../../entities/Search';
 import { Input, LensIcon } from '../../../shared/ui';
-import { selectMemoizedTheme } from '../../../entities/Theme';
+import { selectTheme } from '../../../entities/Theme';
 
 export const SearchForm: FC = () => {
     const { register, handleSubmit, getValues } = useForm<SearchFormValue>();
     const dispatch = useAppDispatch();
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     const handleSearchFormSubmit: SubmitHandler<SearchFormValue> = (data) => {
         if (!data.search.trim()) return;
