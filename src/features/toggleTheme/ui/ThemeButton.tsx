@@ -15,10 +15,10 @@ export const ThemeButton: FC = () => {
     
     return (
         <div 
-            className={ styles.wrapper }
+            className={ styles.theme }
             onClick={toggleThemeHandler}    
         >
-            <div className={styles.inner }>
+            <div className={styles.theme__inner }>
                 {themeType == 'light' ? <MoonIcon /> : <SunIcon />}
             </div>
         </div>

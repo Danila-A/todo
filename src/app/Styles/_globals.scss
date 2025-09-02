@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    
     &.no-scroll {
         overflow: hidden;
     }
@@ -11,4 +12,5 @@ body {
 }
 #root {
 	height: inherit;
+    width: 100%;
 }

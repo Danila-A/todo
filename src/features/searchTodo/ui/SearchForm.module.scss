@@ -1,16 +1,21 @@
-.wrapper {
+@use '../../../app/styles/helpers' as *;
+
+.form {
     width: 100%;
-    .inner {
+
+    &__inner {
         position: relative;
-        .buttonWrapper {
-            position: absolute;
-            right: 16px;
-            top: 7px;
-            .button {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-            }
-        }
+    }
+
+    &__button_wrapper {
+        position: absolute;
+        right: rem(16);
+        top: rem(7);
+    }
+
+    &__button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
     }
 }

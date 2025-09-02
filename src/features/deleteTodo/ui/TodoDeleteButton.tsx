@@ -17,8 +17,8 @@ export const TodoDeleteButton: FC<Props> = ({ id }) => {
     }
 
     return (
-        <div className={ styles.wrapper } onClick={() => deleteTodoHandler(id)}>
-            <div className={ styles.inner }>
+        <div className={ styles.trash } onClick={() => deleteTodoHandler(id)}>
+            <div className={ styles.trash__inner }>
                 <TrashIcon />
             </div>
         </div>

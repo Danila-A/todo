@@ -1,10 +1,12 @@
 @use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .svg {
     .path {
         color: var(--icon-color);
     }
-    &:hover {
+
+    @include hover {
         .path {
             color: var(--trash-icon-active-color);
         }

@@ -1,28 +1,25 @@
 import type { FC } from "react";
-import styles from './ArrowIcon.module.scss';
 
 export const ArrowIcon: FC = () => {
     return (
-        <svg
-            width="10"
-            height="10"
-            viewBox="0 0 10 10"
-            fill="none"
+        <svg 
+            width="9" 
+            height="5" 
+            viewBox="0 0 9 5" 
+            fill="none" 
             xmlns="http://www.w3.org/2000/svg"
         >
-            <path
-                d="M4 4L1 1"
-                stroke="currentColor"
-                strokeLinecap="round"
+            <path 
+                d="M4.63077 1L8 4" 
+                stroke="#F7F7F7" 
+                strokeLinecap="round" 
                 strokeLinejoin="round"
-                className={ styles.path }
             />
-            <path
-                d="M7 1L4 4"
-                stroke="currentColor"
-                strokeLinecap="round"
+            <path 
+                d="M1.26154 4L4.63077 1" 
+                stroke="#F7F7F7" 
+                strokeLinecap="round" 
                 strokeLinejoin="round"
-                className={ styles.path }
             />
         </svg>
     );

@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import styles from './TodoList.module.scss';
+import utils from '../../../../app/styles/utils.module.scss';
 import { useAppSelector } from "../../../../shared/lib";
 import { selectMemoizedTodos } from "../../../../features/searchTodo";
 import { TodoStatusCheckbox } from "../../../../features/toggleTodoStatus";
@@ -15,7 +16,7 @@ export const TodoList: FC = () => {
 
     return (
         <main className={styles.main}>
-            <div className={styles.main__inner}>
+            <div className={`${styles.main__inner} ${utils.container}`}>
 
                 {todos?.map((item) => (
                     <div key={item.id} className={styles.listItem}>

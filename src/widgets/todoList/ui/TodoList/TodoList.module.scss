@@ -1,20 +1,15 @@
 @use '../../../../app/styles/variables.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .main {
-    width: var(--content-width);
-    margin: 0 auto;
-    height: 100%;
     position: relative;
     flex-grow: 1;
-    @media (max-width: 500px) {
-        width: 100%;
-        margin: 0;
-        padding-right: 10px;
-        padding-left: 10px;
-    }
+
     &__inner {
-        height: inherit;
+        height: 100%;
         padding-top: 30px;
+        display: flex;
+        flex-direction: column;
         .listItem {
             border-bottom: 1px solid var(--main-color);
             margin-bottom: 17px;

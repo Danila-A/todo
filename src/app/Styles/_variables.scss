@@ -1,3 +1,5 @@
+@use './helpers' as *;
+
 :root {
     --main-color: #6C63FF;
     --dark-main-color: #534CC2;
@@ -14,12 +16,13 @@
     --dark-theme-text-color: #F7F7F7;
     --dark-theme-focus-color: #FFFFFF64;
 
-    --text-font-size: 20px;
-    --title-font-size: 26px;
-    --input-font-size: 16px;
-    --button-font-size: 18px;
+    --text-font-size: #{rem(20)};
+    --title-font-size: #{rem(26)};
+    --input-font-size: #{rem(16)};
+    --button-font-size: #{rem(18)};
 
-    --content-width: 70%;
+    --content-width: #{rem(1080)};
+    --container-padding-x: #{rem(10)};
 
     --font-family-base: 'Kanit', sans-serif;
     --font-family-accent: 'Inter', sans-serif;

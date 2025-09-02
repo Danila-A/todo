@@ -24,7 +24,7 @@ export const AddForm: FC = () => {
             onSubmit={handleSubmit(handleAddTodoFormSubmit)}
             className={styles.form}
         >
-            <div className={styles.input}>
+            <div className={styles.form__input}>
                 <Input<AddTodoFormValue> 
                     inputType={'add'}
                     placeholder={'input your note...'}
@@ -33,7 +33,7 @@ export const AddForm: FC = () => {
                     themeType={themeType}
                 />
             </div>
-            <div className={styles.buttonsContainer}>
+            <div className={styles.form__buttons_container}>
                 <TodoAddButton />
             </div>
         </form>

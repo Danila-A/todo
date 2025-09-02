@@ -1,25 +1,28 @@
 @use '../../../app/styles/variables.scss';
 
 .header {
-    width: var(--content-width);
-    margin: 0 auto;
-    @media (max-width: 500px) {
-        margin: 0;
-        width: 100%;
+    &__inner {
+        display: flex;
+        flex-direction: column;
     }
+
     .title {
         display: flex;
         justify-content: center;
         padding-top: 40px;
         margin-bottom: 18px;
     }
+
     .controlGroup {
         display: flex;
+
         &__block:not(:last-child) {
             margin-right: 16px;
         }
+
         .searchBlock {
             flex-grow: 1;
+
             @media (max-width: 500px) {
                 flex-basis: 100%;
                 margin-right: 0;
@@ -28,8 +31,6 @@
         }
         @media (max-width: 500px) {
             flex-wrap: wrap;
-            padding-right: 10px;
-            padding-left: 10px;
         }
     }
 }

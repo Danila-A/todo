@@ -1,24 +1,16 @@
 @use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .checkbox {
-    width: 26px;
-    height: 26px;
-    border-radius: 2px;
-    border: 1px solid var(--main-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include square(rem(26));
+    @include flex-center();
+
+    border-radius: rem(2);
+    border: rem(1) solid var(--main-color);
     cursor: pointer;
-    padding-bottom: 3px;
+    padding-bottom: rem(3);
+
     &_checked {
         background-color: var(--main-color);
-    }
-}
-
-.checkMark {
-    width: 100%;
-    display: none;
-    &_checked {
-        display: block;
     }
 }

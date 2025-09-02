@@ -1,26 +1,28 @@
 @use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .modalButton {
-    font-size: var(--button-font-size);
-    padding-right: 22px;
-    padding-left: 22px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
     text-transform: uppercase;
-    border: 1px solid var(--main-color);
+    font-size: var(--button-font-size);
+    padding-inline: rem(22);
+    padding-block: rem(10);
+    border-radius: rem(5);
+    border: rem(1) solid var(--main-color);
     cursor: pointer;
+
     &_cancel {
         background-color: transparent;
         color: var(--main-color);
-        &:hover {
+
+        @include hover {
             background-color: var(--half-transparent-main-color);
         }
     }
     &_apply {
         background-color: var(--main-color);
         color: var(--dark-theme-text-color);
-        &:hover {
+        
+        @include hover {
             background-color: var(--dark-main-color);
         }
     }

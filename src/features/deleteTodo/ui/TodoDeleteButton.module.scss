@@ -1,11 +1,13 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@use '../../../app/styles/helpers' as *;
+
+.trash {
+    @include flex-center();
+
     cursor: pointer;
-    .inner {
-        padding-top: 4px;
-        padding-right: 3px;
-        padding-left: 5px;
+
+    &__inner {
+        padding-top: rem(4);
+        padding-right: rem(3);
+        padding-left: rem(5);
     }
 }

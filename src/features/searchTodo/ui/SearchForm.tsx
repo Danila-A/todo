@@ -21,9 +21,9 @@ export const SearchForm: FC = () => {
     }
     
     return (
-        <div className={ styles.wrapper }>
+        <div className={ styles.form }>
             <form onSubmit={handleSubmit(handleSearchFormSubmit)}>
-                <div className={ styles.inner }>
+                <div className={ styles.form__inner }>
                     <Input<SearchFormValue>
                         inputType={ "search" }
                         placeholder={ 'Search note...' }
@@ -32,9 +32,9 @@ export const SearchForm: FC = () => {
                         onChange={handleSearchReset}
                         themeType={themeType}
                     />
-                    <div className={ styles.buttonWrapper }>
+                    <div className={styles.form__button_wrapper}>
                         <button 
-                            className={styles.button}
+                            className={styles.form__button}
                             type='submit'
                         >
                             <LensIcon themeType={themeType} />
