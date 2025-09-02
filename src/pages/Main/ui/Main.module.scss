@@ -1,13 +1,13 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
     &__dark {
-        background-color: $darkThemeColor;
+        background-color: var(--dark-theme-color);
     }
     &__light {
-        background-color: $lightThemeColor;
+        background-color: var(--light-theme-color);
     }
 }

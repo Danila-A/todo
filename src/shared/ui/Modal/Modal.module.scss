@@ -1,4 +1,4 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .modal {
     width: 500px;
@@ -10,14 +10,14 @@
     padding-left: 30px;
     border: none;
     &::backdrop {
-        background-color: $modalBackdropColor;
+        background-color: var(--modal-backdrop-color);
     }
     &__dark {
-        background-color: $darkThemeColor;
-        border: 1px solid $darkThemeTextColor;
+        background-color: var(--dark-theme-color);
+        border: 1px solid var(--dark-theme-text-color);
     }
     &__light {
-        background-color: $lightThemeColor;
+        background-color: var(--light-theme-color);
     }
     @media (max-width:500px) {
         width: 100%;

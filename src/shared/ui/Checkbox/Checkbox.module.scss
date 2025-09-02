@@ -1,17 +1,17 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .checkbox {
     width: 26px;
     height: 26px;
     border-radius: 2px;
-    border: 1px solid $mainColor;
+    border: 1px solid var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     padding-bottom: 3px;
     &_checked {
-        background-color: $mainColor;
+        background-color: var(--main-color);
     }
 }
 

@@ -1,27 +1,27 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .modalButton {
-    font-size: $buttonFontSize;
+    font-size: var(--button-font-size);
     padding-right: 22px;
     padding-left: 22px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
     text-transform: uppercase;
-    border: 1px solid $mainColor;
+    border: 1px solid var(--main-color);
     cursor: pointer;
     &_cancel {
         background-color: transparent;
-        color: $mainColor;
+        color: var(--main-color);
         &:hover {
-            background-color: $halfTransparentMainColor;
+            background-color: var(--half-transparent-main-color);
         }
     }
     &_apply {
-        background-color: $mainColor;
-        color: $darkThemeTextColor;
+        background-color: var(--main-color);
+        color: var(--dark-theme-text-color);
         &:hover {
-            background-color: $darkMainColor;
+            background-color: var(--dark-main-color);
         }
     }
 }

@@ -1,7 +1,7 @@
-@use '../../../../app/styles/variables.scss' as *;
+@use '../../../../app/styles/variables.scss';
 
 .main {
-    width: $contentWidth;
+    width: var(--content-width);
     margin: 0 auto;
     height: 100%;
     position: relative;
@@ -16,7 +16,7 @@
         height: inherit;
         padding-top: 30px;
         .listItem {
-            border-bottom: 1px solid $mainColor;
+            border-bottom: 1px solid var(--main-color);
             margin-bottom: 17px;
             &:last-child {
                 border: none;

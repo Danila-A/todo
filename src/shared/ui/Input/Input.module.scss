@@ -1,4 +1,4 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .input {
     padding-right: 16px;
@@ -7,9 +7,9 @@
     padding-bottom: 8px;
     border-radius: 5px;
     background-color: transparent;
-    font-size: $inputFontSize;
+    font-size: var(--input-font-size);
     width: 100%;
-    font-family: 'Inter';
+    font-family: var(--font-family-accent);
     height: 38px;
     
     
@@ -20,17 +20,17 @@
         padding-right: 16px;
     }
     &_dark {
-        border: 1px solid $darkThemeTextColor;
-        color: $lightThemeColor;
+        border: 1px solid var(--dark-theme-text-color);
+        color: var(--light-theme-color);
         &:focus {
-            outline: 2px solid  $darkThemeFocusColor;
+            outline: 2px solid  var(--dark-theme-focus-color);
         }
     }
     &_light {
-        border: 2px solid $mainColor;
-        color: $lightThemeTextColor;
+        border: 2px solid var(--main-color);
+        color: var(--light-theme-text-color);
         &:focus {
-            outline: 2px solid $lightThemeFocusColor;
+            outline: 2px solid var(--light-theme-focus-color);
         }
     }
 }

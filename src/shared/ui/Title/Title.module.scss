@@ -1,12 +1,12 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .title {
     text-transform: uppercase;
-    font-size: $titleFontSize;
+    font-size: var(--title-font-size);
     &_light {
-        color: $lightThemeTextColor;
+        color: var(--light-theme-text-color);
     }
     &_dark {
-        color: $darkThemeTextColor;
+        color: var(--dark-theme-text-color);
     }
 }

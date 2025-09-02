@@ -1,12 +1,12 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .svg {
     .path {
-        color: $unActiveIconColor;
+        color: var(--icon-color);
     }
     &:hover {
         .path {
-            color: $trashActiveColor;
+            color: var(--trash-icon-active-color);
         }
     }
 }

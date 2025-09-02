@@ -1,8 +1,8 @@
-@use '../../../app/styles/variables.scss' as *;
+@use '../../../app/styles/variables.scss';
 
 .path__light {
-    color: $mainColor;
+    color: var(--main-color);
 }
 .path__dark {
-    color: $darkThemeTextColor;
+    color: var(--dark-theme-text-color);
 }

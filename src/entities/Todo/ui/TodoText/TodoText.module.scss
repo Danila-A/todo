@@ -1,17 +1,17 @@
-@use '../../../../app/styles/variables.scss' as *;
+@use '../../../../app/styles/variables.scss';
 
 .text {
     text-transform: uppercase;
-    font-size: $textFontSize;
-    color: $lightThemeTextColor;
+    font-size: var(--text-font-size);
+    color: var(--light-theme-text-color);
     font-weight: 500;
     &__checked {
         text-decoration: line-through;
     }
     &__light {
-        color: $lightThemeTextColor;
+        color: var(--light-theme-text-color);
     }
     &__dark {
-        color: $darkThemeTextColor;
+        color: var(--dark-theme-text-color);
     }
 }
