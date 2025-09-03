@@ -1,8 +1,8 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
 
 .path__light {
-    color: global.$mainColor;
+    color: var(--main-color);
 }
 .path__dark {
-    color: global.$darkThemeTextColor;
+    color: var(--dark-theme-text-color);
 }

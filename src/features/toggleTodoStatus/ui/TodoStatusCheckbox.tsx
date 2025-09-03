@@ -17,12 +17,10 @@ export const TodoStatusCheckbox: FC<Props> = ({ id, checked }) => {
     }
 
     return (
-        <div>
-            <Checkbox
-                id={id}
-                clickHandler={ () => toggleStatusHandler(id) }
-                checked={ checked }
-            />
-        </div>
+        <Checkbox
+            id={id}
+            clickHandler={ () => toggleStatusHandler(id) }
+            checked={ checked }
+        />
     );
 }

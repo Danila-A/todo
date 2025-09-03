@@ -1,0 +1,16 @@
+body {
+    height: 100vh;
+    
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+* {
+    font-size: var(--text-font-size);
+    font-family: var(--font-family-base);
+    box-sizing: border-box;
+}
+#root {
+	height: inherit;
+    width: 100%;
+}

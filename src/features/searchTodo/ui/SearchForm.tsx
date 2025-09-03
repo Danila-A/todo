@@ -4,12 +4,12 @@ import { useForm, type SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { setSearchValue, type SearchFormValue } from '../../../entities/Search';
 import { Input, LensIcon } from '../../../shared/ui';
-import { selectMemoizedTheme } from '../../../entities/Theme';
+import { selectTheme } from '../../../entities/Theme';
 
 export const SearchForm: FC = () => {
     const { register, handleSubmit, getValues } = useForm<SearchFormValue>();
     const dispatch = useAppDispatch();
-    const themeType = useAppSelector(selectMemoizedTheme);
+    const themeType = useAppSelector(selectTheme);
 
     const handleSearchFormSubmit: SubmitHandler<SearchFormValue> = (data) => {
         if (!data.search.trim()) return;
@@ -21,9 +21,9 @@ export const SearchForm: FC = () => {
     }
     
     return (
-        <div className={ styles.wrapper }>
+        <div className={ styles.form }>
             <form onSubmit={handleSubmit(handleSearchFormSubmit)}>
-                <div className={ styles.inner }>
+                <div className={ styles.form__inner }>
                     <Input<SearchFormValue>
                         inputType={ "search" }
                         placeholder={ 'Search note...' }
@@ -32,9 +32,9 @@ export const SearchForm: FC = () => {
                         onChange={handleSearchReset}
                         themeType={themeType}
                     />
-                    <div className={ styles.buttonWrapper }>
+                    <div className={styles.form__button_wrapper}>
                         <button 
-                            className={styles.button}
+                            className={styles.form__button}
                             type='submit'
                         >
                             <LensIcon themeType={themeType} />

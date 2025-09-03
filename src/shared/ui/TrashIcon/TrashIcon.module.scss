@@ -1,12 +1,14 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .svg {
     .path {
-        color: global.$unActiveIconColor;
+        color: var(--icon-color);
     }
-    &:hover {
+
+    @include hover {
         .path {
-            color: global.$trashActiveColor;
+            color: var(--trash-icon-active-color);
         }
     }
 }

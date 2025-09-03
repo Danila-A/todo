@@ -1,21 +1,26 @@
-.inner {
+@use '../../../app/styles/helpers' as *;
+
+.modal__inner {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     position: relative;
-    height: 100%;
-    .title {
-        margin-bottom: 25px;
-        width: 100%;
-        text-align: center;
-    }
-    .form {
-        flex-grow: 1;
-        width: 100%;
-    }
-    .closeButton {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-    }
+}
+
+.modal__title {
+    width: 100%;
+    margin-bottom: rem(25);
+    text-align: center;
+}
+
+.modal__form {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.modal__close_button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }

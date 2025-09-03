@@ -1,17 +1,18 @@
-@use '../../../../app/Styles/Variables.scss' as global;
+@use '../../../../app/styles/variables.scss';
 
 .text {
     text-transform: uppercase;
-    font-size: global.$secondTextFontSize;
-    color: global.$lightThemeTextColor;
+    font-size: var(--text-font-size);
+    color: var(--light-theme-text-color);
     font-weight: 500;
-    &__checked {
+
+    &_checked {
         text-decoration: line-through;
     }
-    &__light {
-        color: global.$lightThemeTextColor;
+    &_light {
+        color: var(--light-theme-text-color);
     }
-    &__dark {
-        color: global.$darkThemeTextColor;
+    &_dark {
+        color: var(--dark-theme-text-color);
     }
 }

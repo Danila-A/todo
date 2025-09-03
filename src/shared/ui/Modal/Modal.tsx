@@ -7,12 +7,12 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ children, themeType }) => {
-    const themeClass = themeType == 'dark' ? styles.modal__dark : styles.modal__light;
+    const themeClass = themeType == 'dark' ? styles.modal_dark : styles.modal_light;
 
     return (
         <dialog
             id='modal'
-            className={ `${styles.modal} ${themeClass}` }
+            className={`${styles.modal} ${themeClass}`}
         >
             { children }
         </dialog>

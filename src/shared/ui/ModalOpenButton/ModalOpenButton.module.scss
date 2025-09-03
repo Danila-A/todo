@@ -1,16 +1,17 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .wrapper {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include square(rem(50));
+    @include flex-center();
+
     border-radius: 50%;
-    border: 2px solid global.$mainColor;
-    background-color: global.$mainColor;
-    box-shadow: 0 0 4px global.$mainColor;
-    &:hover {
-        background-color: global.$darkMainColor;
+    border: rem(2) solid var(--main-color);
+    background-color: var(--main-color);
+    box-shadow: 0 0 rem(4) var(--main-color);
+    cursor: pointer;
+
+    @include hover {
+        background-color: var(--dark-main-color);
     }
 }

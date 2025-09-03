@@ -1,68 +1,73 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
-.wrapper {
+.button {
     position: relative;
-    .button {
-        border: 2px solid global.$mainColor;
-        background-color: global.$mainColor;
-        color: global.$lightThemeColor;
-        border-radius: 5px;
-        cursor: pointer;
-        box-sizing: border-box !important; 
-        min-width: 100px;
-        height: 38px;
+
+    &__body {
         display: flex;
         align-items: center;
+        min-width: rem(110);
+        height: rem(38);
+        color: var(--light-theme-color);
+        background-color: var(--main-color);
+        border: rem(2) solid var(--main-color);
+        border-radius: rem(5);
+        cursor: pointer;
         
-        &:hover {
-            background-color: global.$darkMainColor;
-        }
-        .inner {
-            flex-grow: 1;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .text {
-                text-transform: uppercase;
-                font-weight: 500;
-                font-size: global.$filtersButtonTextSize;
-                margin-right: 10px;
-            }
-            .arrow {
-                color: inherit;
-                transform: rotate(180deg);
-                &_rotated {
-                    transform: rotate(0deg);
-                }
-            }
+        @include hover {
+            background-color: var(--dark-main-color);
+        } 
+    }
+
+    &__inner {
+        flex-grow: 1;
+        padding: rem(10);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: var(--button-font-size);
+        margin-right: 10px;
+    }
+
+    &__arrow {
+        transform: rotate(180deg);
+        @include flex-center();
+
+        &_rotated {
+            transform: rotate(0deg);
         }
     }
-    .filtersList {
+
+    &__filters_list {
         position: absolute;
-        left: 0px;
+        left: 0;
         bottom: 0;
         transform: translateY(100%);
         z-index: 1;
         width: 100%;
-        background-color: global.$lightThemeColor;
-        border: 1px solid global.$mainColor;
+        background-color: var(--light-theme-color);
+        border: rem(1) solid var(--main-color);
         border-radius: 5px;
         padding-top: 2px;
         padding-bottom: 2px;
-        .item {
-            color: global.$mainColor;
-            font-size: global.$textFontSize;
-            padding-right: 6px;
-            padding-left: 6px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            text-transform: capitalize;
-            cursor: pointer;
-            &:hover {
-                background-color: global.$halfTransparentMainColor;
-            }   
-        }
+    }
+
+    &__item {
+        color: var(--main-color);
+        font-size: var(--button-font-size);
+        text-transform: capitalize;
+        padding-inline: rem(6);
+        padding-block: rem(4);
+        cursor: pointer;
+
+        @include hover {
+            background-color: var(--half-transparent-main-color);
+        }   
     }
 }
-

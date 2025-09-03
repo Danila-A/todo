@@ -8,14 +8,12 @@ interface Props {
 }
 
 export const TodoText: FC<Props> = ({ text, checked, themeType }) => {
-    const checkClass = checked ? styles.text__checked : null;
-    const themeClass = themeType == 'dark' ? styles.text__dark : styles.text__light;
+    const checkedClass = checked ? styles.text_checked : null;
+    const themeClass = themeType == 'dark' ? styles.text_dark : styles.text_light;
 
     return (
-        <div>
-            <span className={ `${styles.text} ${checkClass} ${themeClass}` }>
-                { text }
-            </span>
-        </div>
+        <p className={ `${styles.text} ${checkedClass} ${themeClass}` }>
+            { text }
+        </p>
     );
 }

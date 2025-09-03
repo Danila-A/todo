@@ -1,19 +1,21 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
-.wrapper {
-    width: 38px;
-    height: 38px;
-    border-radius: 5px;
-    background-color: global.$mainColor;
+.theme {
+    @include square(rem(38));
+
     cursor: pointer;
-    &:hover {
-        background-color: global.$darkMainColor;
-        box-shadow: 0 0 4px 0 global.$mainColor;
+    border-radius: rem(5);
+    background-color: var(--main-color);
+
+    @include hover {
+        background-color: var(--dark-main-color);
+        box-shadow: 0 0 rem(4) 0 var(--main-color);
     }
-    .inner {
-        padding: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    &__inner {
+        @include flex-center();
+
+        padding: rem(8);
     }
 }

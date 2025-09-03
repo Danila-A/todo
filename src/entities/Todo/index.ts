@@ -1,6 +1,5 @@
 export { TodoText } from './ui/TodoText/TodoText.tsx';
-export type { 
-    TodoState,
+export type {
     AddTodoFormValue
 } from './model/types.ts';
 export {
