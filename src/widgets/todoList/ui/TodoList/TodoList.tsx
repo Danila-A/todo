@@ -19,23 +19,21 @@ export const TodoList: FC = () => {
             <div className={`${styles.main__inner} ${utils.container}`}>
 
                 {todos?.map((item) => (
-                    <div key={item.id} className={styles.listItem}>
-                        <div className={styles.listItem__inner}>
+                    <div key={item.id} className={styles.todo}>
+                        <div className={styles.todo__inner}>
 
-                            <div className={styles.listItem__checkbox}>
+                            <div className={styles.todo__checkbox}>
                                 <TodoStatusCheckbox
                                     checked={item.status}
                                     id={item.id}
                                 />
                             </div>
-                            <div>
-                                <TodoText 
-                                    text={item.text}
-                                    checked={item.status}
-                                    themeType={themeType}
-                                />
-                            </div>
-                            <div className={styles.listItem__deleteButton}>
+                            <TodoText 
+                                text={item.text}
+                                checked={item.status}
+                                themeType={themeType}
+                            />
+                            <div className={styles.todo__delete_button}>
                                 <TodoDeleteButton id={item.id} />
                             </div>
 
@@ -44,7 +42,7 @@ export const TodoList: FC = () => {
                 ))}
                 
             </div>
-            <div className={styles.main__modalOpenButton}>
+            <div className={styles.main__modal_open_button}>
                 <ModalOpenButton />
             </div>
         </main>

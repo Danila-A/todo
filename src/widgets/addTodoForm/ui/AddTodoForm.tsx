@@ -11,18 +11,18 @@ export const AddTodoForm: FC = () => {
 
     return (
         <Modal themeType={themeType}>
-            <div className={styles.inner}>
+            <div className={styles.modal__inner}>
 
-                <div className={styles.title}>
+                <div className={styles.modal__title}>
                     <Title 
                         text={contentData.modalTitle}
                         themeType={themeType}
                     />
                 </div>
-                <div className={styles.form}>
+                <div className={styles.modal__form}>
                     <AddForm />
                 </div>
-                <div className={styles.closeButton}>
+                <div className={styles.modal__close_button}>
                     <ModalCloseButton />
                 </div>
 

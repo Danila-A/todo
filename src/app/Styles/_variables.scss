@@ -16,12 +16,17 @@
     --dark-theme-text-color: #F7F7F7;
     --dark-theme-focus-color: #FFFFFF64;
 
-    --text-font-size: #{rem(20)};
+    --text-font-size: #{fluid(20, 16)};
     --title-font-size: #{rem(26)};
     --input-font-size: #{rem(16)};
-    --button-font-size: #{rem(18)};
+    --button-font-size: #{fluid(18, 16)};
 
-    --content-width: #{rem(1080)};
+    --content-width: #{rem(1100)};
+
+    @include laptop {
+        --content-width: #{rem(870)};
+    }
+
     --container-padding-x: #{rem(10)};
 
     --font-family-base: 'Kanit', sans-serif;

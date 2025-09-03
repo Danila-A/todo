@@ -12,10 +12,8 @@ export const TodoText: FC<Props> = ({ text, checked, themeType }) => {
     const themeClass = themeType == 'dark' ? styles.text_dark : styles.text_light;
 
     return (
-        <div>
-            <span className={ `${styles.text} ${checkedClass} ${themeClass}` }>
-                { text }
-            </span>
-        </div>
+        <p className={ `${styles.text} ${checkedClass} ${themeClass}` }>
+            { text }
+        </p>
     );
 }

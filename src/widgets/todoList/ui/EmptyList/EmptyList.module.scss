@@ -1,20 +1,22 @@
 @use '../../../../app/styles/variables.scss';
+@use '../../../../app/styles/helpers' as *;
 
 .main {
-    width: var(--content-width);
-    margin: 0 auto;
-    height: 100%;
+    flex-grow: 1;
+    display: flex;
+
     &__inner {
-        height: inherit;
-        padding-top: 35px;
+        flex-grow: 1;
+        padding-top: rem(35);
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: start;
         position: relative;
     }
-    &__modalOpenButton {
+
+    &__modal_open_button {
         position: absolute;
-        right: 8px;
-        bottom: 32px;
+        right: rem(8);
+        bottom: rem(32);
     }
 }

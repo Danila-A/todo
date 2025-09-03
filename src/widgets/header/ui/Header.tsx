@@ -16,20 +16,17 @@ export const Header: FC = () => {
         <header className={styles.header}>
             <div className={`${styles.header__inner} ${utils.container}`}>
                 
-                <div className={styles.title}>
+                <div className={styles.header__title}>
                     <Title
                         text={contentData.title}
                         themeType={themeType}
                     />
                 </div>
-                <div className={styles.controlGroup}>
-                    <div className={`${styles.controlGroup__block} ${styles.searchBlock}`}>
-                        <SearchForm />
-                    </div>
-                    <div className={styles.controlGroup__block}>
+                <div className={styles.header__control}>
+                    <SearchForm />
+
+                    <div className={styles.header__buttons}>
                         <FiltersButton />
-                    </div>
-                    <div className={styles.controlGroup__block}>
                         <ThemeButton />
                     </div>
                 </div>
