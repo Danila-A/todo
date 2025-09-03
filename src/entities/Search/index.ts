@@ -1,4 +1,4 @@
-export type { SearchType } from './model/types.ts';
+export type { SearchFormValue } from './model/types.ts';
 export { 
     default as searchReducer,
     setSearchValue,

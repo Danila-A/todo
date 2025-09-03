@@ -1,1 +1,1 @@
-export { TodoListWithImagePlaceholder } from './ui/TodoList.tsx';
+export { TodoListWithImagePlaceholder } from './ui/TodoList/TodoList.tsx';

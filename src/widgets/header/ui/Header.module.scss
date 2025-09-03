@@ -1,28 +1,38 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .header {
-    width: global.$contentWidth;
-    .title {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
         display: flex;
         justify-content: center;
-        padding-top: 40px;
-        margin-bottom: 18px;
+        padding-top: rem(40);
+        margin-bottom: rem(18);
     }
-    .controlGroup {
+
+    &__control {
         display: flex;
-        div:not(last-child) {
-            margin-right: 16px;
-        }
-        .searchBlock {
-            flex-grow: 1;
-            @media (max-width: 500px) {
-                flex-basis: 100%;
-            }
-        }
-        @media (max-width: 500px) {
+        column-gap: rem(16);
+
+        @include mobile {
             flex-wrap: wrap;
-            padding-right: 10px;
-            padding-left: 10px;
+            row-gap: rem(16);
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        flex-direction: row-reverse;
+        column-gap: rem(16);
+
+        @include mobile-above {
+            display: contents;
         }
     }
 }

@@ -1,23 +1,16 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .checkbox {
-    width: 26px;
-    height: 26px;
-    border-radius: 2px;
-    border: 1px solid global.$mainColor;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &_checked {
-        background-color: global.$mainColor;
-    }
-}
+    @include square(rem(26));
+    @include flex-center();
 
-.checkMark {
-    width: 100%;
-    display: none;
+    border-radius: rem(2);
+    border: rem(1) solid var(--main-color);
+    cursor: pointer;
+    padding-bottom: rem(3);
+
     &_checked {
-        display: block;
+        background-color: var(--main-color);
     }
 }

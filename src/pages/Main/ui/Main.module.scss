@@ -1,0 +1,14 @@
+@use '../../../app/styles/variables.scss';
+
+.page {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &_dark {
+        background-color: var(--dark-theme-color);
+    }
+    &_light {
+        background-color: var(--light-theme-color);
+    }
+}

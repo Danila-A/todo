@@ -1,0 +1,16 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.imageBlock {
+    margin-bottom: rem(20);
+}
+.caption {
+    text-align: center;
+    
+    &__light {
+        color: var(--light-theme-text-color);
+    }
+    &__dark {
+        color: var(--dark-theme-text-color);
+    }
+}

@@ -1,0 +1,8 @@
+@use '../../../app/styles/variables.scss';
+
+.path__light {
+    color: var(--main-color);
+}
+.path__dark {
+    color: var(--dark-theme-text-color);
+}

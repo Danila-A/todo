@@ -1,0 +1,73 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.button {
+    position: relative;
+
+    &__body {
+        display: flex;
+        align-items: center;
+        min-width: rem(110);
+        height: rem(38);
+        color: var(--light-theme-color);
+        background-color: var(--main-color);
+        border: rem(2) solid var(--main-color);
+        border-radius: rem(5);
+        cursor: pointer;
+        
+        @include hover {
+            background-color: var(--dark-main-color);
+        } 
+    }
+
+    &__inner {
+        flex-grow: 1;
+        padding: rem(10);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: var(--button-font-size);
+        margin-right: 10px;
+    }
+
+    &__arrow {
+        transform: rotate(180deg);
+        @include flex-center();
+
+        &_rotated {
+            transform: rotate(0deg);
+        }
+    }
+
+    &__filters_list {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        z-index: 1;
+        width: 100%;
+        background-color: var(--light-theme-color);
+        border: rem(1) solid var(--main-color);
+        border-radius: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    &__item {
+        color: var(--main-color);
+        font-size: var(--button-font-size);
+        text-transform: capitalize;
+        padding-inline: rem(6);
+        padding-block: rem(4);
+        cursor: pointer;
+
+        @include hover {
+            background-color: var(--half-transparent-main-color);
+        }   
+    }
+}
