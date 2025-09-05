@@ -1,0 +1,30 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.modal {
+    width: rem(500);
+    height: rem(289);
+    border-radius: rem(16);
+    padding-block: rem(18);
+    padding-inline: rem(30);
+    border: none;
+    
+    &::backdrop {
+        background-color: var(--modal-backdrop-color);
+    }
+
+    &_dark {
+        background-color: var(--dark-theme-color);
+        border: rem(1) solid var(--dark-theme-text-color);
+    }
+
+    &_light {
+        background-color: var(--light-theme-color);
+    }
+    
+    @include mobile {
+        width: 100%;
+        padding-block: rem(8);
+        padding-inline: rem(20);
+    }
+}

@@ -1,0 +1,13 @@
+@use '../../../app/styles/helpers' as *;
+
+.trash {
+    @include flex-center();
+
+    cursor: pointer;
+
+    &__inner {
+        padding-top: rem(4);
+        padding-right: rem(3);
+        padding-left: rem(5);
+    }
+}

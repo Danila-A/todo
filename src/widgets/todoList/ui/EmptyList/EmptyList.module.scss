@@ -1,0 +1,22 @@
+@use '../../../../app/styles/variables.scss';
+@use '../../../../app/styles/helpers' as *;
+
+.main {
+    flex-grow: 1;
+    display: flex;
+
+    &__inner {
+        flex-grow: 1;
+        padding-top: rem(35);
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        position: relative;
+    }
+
+    &__modal_open_button {
+        position: absolute;
+        right: rem(8);
+        bottom: rem(32);
+    }
+}

@@ -1,0 +1,21 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.theme {
+    @include square(rem(38));
+
+    cursor: pointer;
+    border-radius: rem(5);
+    background-color: var(--main-color);
+
+    @include hover {
+        background-color: var(--dark-main-color);
+        box-shadow: 0 0 rem(4) 0 var(--main-color);
+    }
+
+    &__inner {
+        @include flex-center();
+
+        padding: rem(8);
+    }
+}

@@ -1,0 +1,38 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.header {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        padding-top: rem(40);
+        margin-bottom: rem(18);
+    }
+
+    &__control {
+        display: flex;
+        column-gap: rem(16);
+
+        @include mobile {
+            flex-wrap: wrap;
+            row-gap: rem(16);
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        flex-direction: row-reverse;
+        column-gap: rem(16);
+
+        @include mobile-above {
+            display: contents;
+        }
+    }
+}

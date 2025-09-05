@@ -1,25 +1,29 @@
-@use '../../../app/Styles/Variables.scss' as global;
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
 
 .modalButton {
-    padding-right: 22px;
-    padding-left: 22px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
     text-transform: uppercase;
-    border: 1px solid global.$mainColor;
+    font-size: var(--button-font-size);
+    padding-inline: rem(22);
+    padding-block: rem(10);
+    border-radius: rem(5);
+    border: rem(1) solid var(--main-color);
+    cursor: pointer;
+
     &_cancel {
         background-color: transparent;
-        color: global.$mainColor;
-        &:hover {
-            background-color: global.$halfTransparentMainColor;
+        color: var(--main-color);
+
+        @include hover {
+            background-color: var(--half-transparent-main-color);
         }
     }
     &_apply {
-        background-color: global.$mainColor;
-        color: global.$darkThemeTextColor;
-        &:hover {
-            background-color: global.$darkMainColor;
+        background-color: var(--main-color);
+        color: var(--dark-theme-text-color);
+        
+        @include hover {
+            background-color: var(--dark-main-color);
         }
     }
 }

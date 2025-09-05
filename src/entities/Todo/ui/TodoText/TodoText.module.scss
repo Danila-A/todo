@@ -1,0 +1,18 @@
+@use '../../../../app/styles/variables.scss';
+
+.text {
+    text-transform: uppercase;
+    font-size: var(--text-font-size);
+    color: var(--light-theme-text-color);
+    font-weight: 500;
+
+    &_checked {
+        text-decoration: line-through;
+    }
+    &_light {
+        color: var(--light-theme-text-color);
+    }
+    &_dark {
+        color: var(--dark-theme-text-color);
+    }
+}
