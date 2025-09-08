@@ -1,16 +1,18 @@
 export const useAddButtonPosition = () => {
     const displayWidth = window.innerWidth;
-    console.log(displayWidth);
+    const contentWidth = displayWidth * 0.6;
+    const rightGap = 8;
+    const bottomGap = 32;
 
     if (displayWidth < 1000) {
         return {
-            right: `${8 / 16}rem`,
-            bottom: `${32 / 16}rem`
+            right: `${rightGap / 16}rem`,
+            bottom: `${bottomGap / 16}rem`
         };
     }
 
     return {
-        right: (((displayWidth - (displayWidth * 0.6)) / 2 + 8) / 16).toString() + 'rem',
-        bottom: (32 / 16).toString() + 'rem'
+        right: (((displayWidth - contentWidth) / 2 + rightGap) / 16).toString() + 'rem',
+        bottom: (bottomGap / 16).toString() + 'rem'
     };
 }
