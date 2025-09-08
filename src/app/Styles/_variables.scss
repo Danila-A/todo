@@ -21,14 +21,14 @@
     --input-font-size: #{rem(16)};
     --button-font-size: #{fluid(18, 16)};
 
-    --content-width: #{rem(1100)};
+    --font-family-base: 'Kanit', sans-serif;
+    --font-family-accent: 'Inter', sans-serif;
+
+    --content-width: #{rem(1152)};
+
+    --container-padding-x: #{rem(10)};
 
     @include laptop {
         --content-width: #{rem(870)};
     }
-
-    --container-padding-x: #{rem(10)};
-
-    --font-family-base: 'Kanit', sans-serif;
-    --font-family-accent: 'Inter', sans-serif;
 }
