@@ -9,10 +9,12 @@ import { TodoDeleteButton } from "../../../../features/deleteTodo";
 import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
 import { selectTheme } from "../../../../entities/Theme";
+import { useAddButtonPosition } from "../../lib/buttonPosition/useAddButtonPosition";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
     const themeType = useAppSelector(selectTheme);
+    const addButtonStyles = useAddButtonPosition();
 
     return (
         <main className={styles.main}>
@@ -42,7 +44,10 @@ export const TodoList: FC = () => {
                 ))}
                 
             </div>
-            <div className={styles.main__modal_open_button}>
+            <div 
+                className={styles.main__modal_open_button}
+                style={addButtonStyles}
+            >
                 <ModalOpenButton />
             </div>
         </main>
