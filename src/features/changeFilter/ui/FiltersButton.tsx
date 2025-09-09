@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/lib";
 import { changeFilter, selectFilter } from "../../../entities/Filter";
 import { ArrowIcon } from "../../../shared/ui";
 import { contentData } from "../../../shared/staticContent";
-import { useFilterButton } from "../lib/useFIlterButton";
+import { useFilterButton } from "../lib/useFilterButton";
 
 export const FiltersButton: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
