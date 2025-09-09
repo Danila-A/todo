@@ -8,8 +8,8 @@ describe('Testing searchSlice', () => {
         expect(result).toEqual({ value: '' });
     });
 
-    test('should set value at state that is passed by action', () => {
-        const action = { type: setSearchValue.type, payload: { value: 'some todo' }};
+    test('should set value at state that is passed by action and set value string in lower case', () => {
+        const action = { type: setSearchValue.type, payload: { value: 'Some todo' }};
 
         const result = searchReducer({ value: '' }, action);
 
