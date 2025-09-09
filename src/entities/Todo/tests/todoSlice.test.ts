@@ -15,8 +15,8 @@ describe('Testing todoSlice', () => {
         expect(result).toEqual({ todoList: [] });
     });
 
-    test('should add new todo to state that is passed by action', () => {
-        const todo = { id: 1, text: 'first todo', status: false };
+    test('should add new todo to state that is passed by action and set text string to lower case', () => {
+        const todo = { id: 1, text: 'First Todo', status: false };
         const action = { type: addTodo.type, payload: { text: todo.text }};
         const result = todoReducer({ todoList: [] }, action);
 
