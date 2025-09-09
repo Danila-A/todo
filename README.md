@@ -15,15 +15,22 @@ Also you can just open the app via command prompt and write command above.
 
 Ensure that you have the installed node.js to use npm.
 
-After you've installed the app you can run it via editor terminal or command prompt like you want.
+After you've installed the app you can run it at dev mode on local server via editor terminal or command prompt like you want:
 
 ```
 npm run dev
 ```
 
+You can also to build the app and run it at preview mode:
+
+```
+npm run build
+npm run preview
+```
+
 ## App stack
 
-In this app I use below stack:
+To build this app I've used below stack:
 
 - React
 - Redux Toolkit
