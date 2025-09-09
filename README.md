@@ -28,6 +28,12 @@ npm run build
 npm run preview
 ```
 
+## Design
+
+I got a design to my todo app from figma layout by Dima Dzubenko
+
+[Figma](https://www.figma.com/design/mMcYkKyh45lvLkSutvDGM5/Simple-ToDo-List-Design--Community-?node-id=13-4&t=kcae5sCU4ntl0zAu-0)
+
 ## App stack
 
 To build this app I've used below stack:
