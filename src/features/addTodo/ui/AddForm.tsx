@@ -13,6 +13,10 @@ export const AddForm: FC = () => {
     const themeType = useAppSelector(selectTheme);
     
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
+        const modal = document.querySelector('#modal') as HTMLDialogElement;
+        (document.querySelector('body') as HTMLBodyElement)?.classList.remove('no-scroll');
+        modal.close();
+        
         if (!data.add.trim()) return;
         dispatch(addTodo({ text: data.add }));
         dispatch(saveTodosToLocalStorage());
