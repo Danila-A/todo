@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import styles from './Modal.module.scss';
+import { useModal } from '../../lib/handlers/useModal';
 
 interface Props {
     children: ReactNode;
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ children, themeType }) => {
+    useModal();
     const themeClass = themeType == 'dark' ? styles.modal_dark : styles.modal_light;
 
     return (
@@ -14,7 +16,9 @@ export const Modal: FC<Props> = ({ children, themeType }) => {
             id='modal'
             className={`${styles.modal} ${themeClass}`}
         >
-            { children }
+            <div className={styles.modal__inner}>
+                { children }
+            </div>
         </dialog>
     );
 }
