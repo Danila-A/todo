@@ -12,7 +12,7 @@ const searchSlice = createSlice({
     },
     reducers: {
         setSearchValue(state, action: PayloadAction<SearchType>) {
-            if (action.payload) state.value = action.payload.value;
+            if (action.payload) state.value = action.payload.value.toLowerCase();
         }
     }
 });

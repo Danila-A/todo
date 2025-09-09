@@ -12,7 +12,7 @@ const todoSlice = createSlice({
         addTodo(state, action: PayloadAction<{ text: string }>) {
             state.todoList?.push({
                 id: Math.random(),
-                text: action.payload.text,
+                text: action.payload.text.toLowerCase(),
                 status: false,
             });
             if (state.todoList) setDataToLocalStorage<TodoItem[]>(state.todoList, 'todos');
