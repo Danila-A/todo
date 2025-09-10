@@ -30,11 +30,13 @@ export const TodoList: FC = () => {
                                     id={item.id}
                                 />
                             </div>
-                            <TodoText 
-                                text={item.text}
-                                checked={item.status}
-                                themeType={themeType}
-                            />
+                            <div className={styles.todo__text}>
+                                <TodoText 
+                                    text={item.text}
+                                    checked={item.status}
+                                    themeType={themeType}
+                                />
+                            </div>
                             <div className={styles.todo__delete_button}>
                                 <TodoDeleteButton id={item.id} />
                             </div>
