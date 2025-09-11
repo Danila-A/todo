@@ -1,8 +1,8 @@
 import { useTransition } from "@react-spring/web";
 
-export const useListAnimation = (todos: TodoItem[] | null) => {
+export const useListAnimation = (todos: TodoItem[]) => {
     return useTransition(
-        todos ? todos : [], 
+        todos, 
         {
             from: { 
                 opacity: 0,
