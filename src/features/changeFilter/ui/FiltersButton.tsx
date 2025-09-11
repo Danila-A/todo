@@ -4,9 +4,11 @@ import { useAppDispatch, useAppSelector } from "../../../shared/lib";
 import { changeFilter, selectFilter } from "../../../entities/Filter";
 import { ArrowIcon } from "../../../shared/ui";
 import { contentData } from "../../../shared/staticContent";
+import { useFilterButton } from "../lib/useFilterButton";
 
 export const FiltersButton: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
+    useFilterButton(isVisible, setIsVisible);
     const filter = useAppSelector(selectFilter);
     const dispatch = useAppDispatch();
 
@@ -20,7 +22,11 @@ export const FiltersButton: FC = () => {
     return (
         <div className={ styles.button }>
 
-            <div className={ styles.button__body } onClick={() => setIsVisible(!isVisible)}>
+            <div 
+                className={ styles.button__body } 
+                onClick={() => setIsVisible(!isVisible)}
+                id='filterButton'
+            >
                 <div className={ styles.button__inner }>
                     <div className={ styles.button__text }>{ filter }</div>
                     <div className={ arrowClasses }>
