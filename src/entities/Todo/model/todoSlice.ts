@@ -11,7 +11,7 @@ const todoSlice = createSlice({
     reducers: {
         addTodo(state, action: PayloadAction<{ text: string }>) {
             state.todoList?.push({
-                id: Math.random(),
+                id: new Date().getTime(),
                 text: action.payload.text.toLowerCase(),
                 status: false,
             });
