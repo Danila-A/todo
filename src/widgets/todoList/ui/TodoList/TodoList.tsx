@@ -10,35 +10,14 @@ import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
 import { selectTheme } from "../../../../entities/Theme";
 import { useAddButtonPosition } from "../../lib/buttonPosition/useAddButtonPosition";
-import { useTransition, animated } from "@react-spring/web";
+import { animated } from "@react-spring/web";
+import { useListAnimation } from "../../lib/animation/useListAnimation";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
     const themeType = useAppSelector(selectTheme);
     const addButtonStyles = useAddButtonPosition();
-    const transitions = useTransition(
-        todos ? todos : [], 
-        {
-            from: { 
-                opacity: 0,
-                scale: 1.1
-            },
-            enter: { 
-                opacity: 1,
-                scale: 1
-            },
-            leave: { 
-                opacity: 0,
-                scale: 1.1
-            },
-            trail: 50,
-            // sort: 
-            config: {
-                tension: 300,
-                mass: 1
-            },          
-        }
-    );
+    const transitions = useListAnimation(todos);
 
     return (
         <main className={styles.main}>
