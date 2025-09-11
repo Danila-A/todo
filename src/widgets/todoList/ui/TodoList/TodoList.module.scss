@@ -4,6 +4,7 @@
 .main {
     position: relative;
     flex-grow: 1;
+    display: flex;
 
     &__inner {
         padding-top: rem(30);
@@ -11,6 +12,8 @@
         flex-direction: column;
         row-gap: rem(17);
         padding-bottom: rem(100);
+        min-height: 100%;
+        flex-grow: 1;
     }
 
     &__modal_open_button {
