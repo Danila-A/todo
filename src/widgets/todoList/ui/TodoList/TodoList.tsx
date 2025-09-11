@@ -1,4 +1,4 @@
-import { useRef, type FC } from "react";
+import type { FC } from "react";
 import styles from './TodoList.module.scss';
 import utils from '../../../../app/styles/utils.module.scss';
 import { useAppSelector } from "../../../../shared/lib";
@@ -10,8 +10,7 @@ import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
 import { selectTheme } from "../../../../entities/Theme";
 import { useAddButtonPosition } from "../../lib/buttonPosition/useAddButtonPosition";
-import { useTransition, animated, useSpringValue, useSpring } from "@react-spring/web";
-import useMeasure from "react-use-measure";
+import { useTransition, animated } from "@react-spring/web";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
@@ -40,16 +39,10 @@ export const TodoList: FC = () => {
             },          
         }
     );
-    const [ref, bounds] = useMeasure();
-    const springs = useSpring({
-        flexGrow: 1,
-    });
 
     return (
         <main className={styles.main}>
-            <animated.div 
-                className={`${styles.main__inner} ${utils.container}`}
-            >
+            <div className={`${styles.main__inner} ${utils.container}`}>
 
                 {transitions((style, item) => (
                     <animated.div 
@@ -80,7 +73,7 @@ export const TodoList: FC = () => {
                     </animated.div>
                 ))}
                 
-            </animated.div>
+            </div>
             <div 
                 className={styles.main__modal_open_button}
                 style={addButtonStyles}
