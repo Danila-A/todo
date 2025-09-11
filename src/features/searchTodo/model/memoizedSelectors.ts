@@ -8,24 +8,24 @@ export const selectMemoizedTodos = createSelector(
     (todos, filter, searchValue) => {
         if (filter == 'complete') {
             const result = filterBySearchValue(searchValue, todos);
-            return result ? result.filter((item) => item.status == true) : null;
+            return result.filter((item) => item.status === true);
         }
 
         if (filter == 'incomplete') {
             const result = filterBySearchValue(searchValue, todos);
-            return result ? result.filter((item) => item.status == false) : null;
+            return result.filter((item) => item.status === false);
         }
 
         return filterBySearchValue(searchValue, todos);
     }
 );
 
-function filterBySearchValue(searchValue: string, todos: TodoItem[] | null): TodoItem[] | null {
+function filterBySearchValue(searchValue: string, todos: TodoItem[]): TodoItem[] {
     if (!searchValue) return todos;
     if (todos) {
         const filteredBySearch = todos.filter((item) => item.text.includes(searchValue));
-        return filteredBySearch ? filteredBySearch : null;
+        return filteredBySearch ? filteredBySearch : [];
     } else {
-        return null;
+        return [];
     }
 }
