@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useRef, type FC } from "react";
 import styles from './TodoList.module.scss';
 import utils from '../../../../app/styles/utils.module.scss';
 import { useAppSelector } from "../../../../shared/lib";
@@ -10,18 +10,53 @@ import { ModalOpenButton } from "../../../../shared/ui";
 import { WithImagePlaceholder } from "../../lib/WithImagePlaceholder";
 import { selectTheme } from "../../../../entities/Theme";
 import { useAddButtonPosition } from "../../lib/buttonPosition/useAddButtonPosition";
+import { useTransition, animated, useSpringValue, useSpring } from "@react-spring/web";
+import useMeasure from "react-use-measure";
 
 export const TodoList: FC = () => {
     const todos = useAppSelector(selectMemoizedTodos);
     const themeType = useAppSelector(selectTheme);
     const addButtonStyles = useAddButtonPosition();
+    const transitions = useTransition(
+        todos ? todos : [], 
+        {
+            from: { 
+                opacity: 0,
+                scale: 1.1
+            },
+            enter: { 
+                opacity: 1,
+                scale: 1
+            },
+            leave: { 
+                opacity: 0,
+                scale: 1.1
+            },
+            trail: 50,
+            // sort: 
+            config: {
+                tension: 300,
+                mass: 1
+            },          
+        }
+    );
+    const [ref, bounds] = useMeasure();
+    const springs = useSpring({
+        flexGrow: 1,
+    });
 
     return (
         <main className={styles.main}>
-            <div className={`${styles.main__inner} ${utils.container}`}>
+            <animated.div 
+                className={`${styles.main__inner} ${utils.container}`}
+            >
 
-                {todos?.map((item) => (
-                    <div key={item.id} className={styles.todo}>
+                {transitions((style, item) => (
+                    <animated.div 
+                        key={item.id} 
+                        className={styles.todo}
+                        style={style}
+                    >
                         <div className={styles.todo__inner}>
 
                             <div className={styles.todo__checkbox}>
@@ -42,10 +77,10 @@ export const TodoList: FC = () => {
                             </div>
 
                         </div>
-                    </div>
+                    </animated.div>
                 ))}
                 
-            </div>
+            </animated.div>
             <div 
                 className={styles.main__modal_open_button}
                 style={addButtonStyles}
