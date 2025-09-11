@@ -2,7 +2,6 @@ import type { FC } from "react";
 import styles from './TodoList.module.scss';
 import utils from '../../../../app/styles/utils.module.scss';
 import { useAppSelector } from "../../../../shared/lib";
-import { selectMemoizedTodos } from "../../../../features/searchTodo";
 import { TodoStatusCheckbox } from "../../../../features/toggleTodoStatus";
 import { TodoText } from "../../../../entities/Todo";
 import { TodoDeleteButton } from "../../../../features/deleteTodo";
@@ -13,8 +12,7 @@ import { useAddButtonPosition } from "../../lib/buttonPosition/useAddButtonPosit
 import { animated } from "@react-spring/web";
 import { useListAnimation } from "../../lib/animation/useListAnimation";
 
-export const TodoList: FC = () => {
-    const todos = useAppSelector(selectMemoizedTodos);
+export const TodoList: FC<{ todos:TodoItem[] }> = ({ todos }) => {
     const themeType = useAppSelector(selectTheme);
     const addButtonStyles = useAddButtonPosition();
     const transitions = useListAnimation(todos);

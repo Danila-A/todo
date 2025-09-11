@@ -7,7 +7,7 @@ export const WithImagePlaceholder = () => {
     return () => {
         const todos = useAppSelector(selectMemoizedTodos);
         
-        if (!todos?.length) return <EmptyList />
-        return <TodoList />
+        if (!todos.length) return <EmptyList />
+        return <TodoList todos={todos} />
     }
 }
