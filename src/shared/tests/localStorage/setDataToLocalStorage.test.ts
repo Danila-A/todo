@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { setDataToLocalStorage } from '../lib/localStorage/setDataToLocalStorage.ts';
+import { setDataToLocalStorage } from '../../lib/localStorage/setDataToLocalStorage.ts';
 
 describe('Testing function that sets data to localStorage', () => {
     test('should throw error when passed empty key', () => {
