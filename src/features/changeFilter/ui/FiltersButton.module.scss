@@ -36,12 +36,9 @@
     }
 
     &__arrow {
-        transform: rotate(180deg);
         @include flex-center();
 
-        &_rotated {
-            transform: rotate(0deg);
-        }
+        transform: rotate(180deg);
     }
 
     &__filters_list {
@@ -56,6 +53,7 @@
         border-radius: 5px;
         padding-top: 2px;
         padding-bottom: 2px;
+        transform-origin: 50% 0;
     }
 
     &__item {
