@@ -4,17 +4,36 @@ import { useAppDispatch, useAppSelector } from "../../../shared/lib";
 import { changeFilter, selectFilter } from "../../../entities/Filter";
 import { ArrowIcon } from "../../../shared/ui";
 import { contentData } from "../../../shared/staticContent";
-import { useFilterButton } from "../lib/useFilterButton";
+import { useOutsideFilterButtonClick } from "../lib/usability/useOutsideFilterButtonClick";
+import { useFilterButtonAnimation } from "../lib/animation/useFilterButtonAnimation";
+import { animated } from '@react-spring/web';
 
 export const FiltersButton: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    useFilterButton(isVisible, setIsVisible);
+    useOutsideFilterButtonClick(isVisible, setIsVisible);
     const filter = useAppSelector(selectFilter);
     const dispatch = useAppDispatch();
+    const {springs, api} = useFilterButtonAnimation();
 
     const handleChangeFilter = (filter: FilterType) => {
-        dispatch(changeFilter({ filter }));
-        setIsVisible(false);
+        api.start({reverse: true});
+        setTimeout(() => {
+            // console.log('render');
+            dispatch(changeFilter({ filter }));
+            setIsVisible(false)
+        }, 2200);
+    }
+
+    console.log('render');
+
+    const handleClick = () => {
+        if (!isVisible) {
+            setIsVisible(true);
+            api.start();
+        } else {
+            api.start({reverse: true});
+            setTimeout(() => setIsVisible(false), 200);
+        }
     }
 
     const arrowClasses = isVisible ? `${styles.button__arrow}` : `${styles.button__arrow} ${styles.button__arrow_rotated}`;
@@ -24,7 +43,7 @@ export const FiltersButton: FC = () => {
 
             <div 
                 className={ styles.button__body } 
-                onClick={() => setIsVisible(!isVisible)}
+                onClick={handleClick}
                 id='filterButton'
             >
                 <div className={ styles.button__inner }>
@@ -36,7 +55,10 @@ export const FiltersButton: FC = () => {
             </div>
 
             {isVisible && 
-                <div className={ styles.button__filters_list }>
+                <animated.div 
+                    className={ styles.button__filters_list }
+                    style={springs}
+                >
                     {contentData.filters.map((item) => (
                         <div 
                             className={ styles.button__item }
@@ -46,7 +68,7 @@ export const FiltersButton: FC = () => {
                             { item.value }
                         </div>
                     ))}
-                </div>
+                </animated.div>
             }
 
         </div>

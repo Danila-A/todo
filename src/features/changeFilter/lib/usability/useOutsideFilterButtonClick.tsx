@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useFilterButton = (
+export const useOutsideFilterButtonClick = (
     isVisible: boolean, 
     setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
