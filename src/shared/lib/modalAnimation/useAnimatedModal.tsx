@@ -1,29 +1,15 @@
 import { useSpring } from "@react-spring/web";
 import { selectModalOpenStatus } from "../../model"
 import { useAppSelector } from "../store/customReduxHooks"
-import { useEffect } from "react";
 
 export const useAnimatedModal = () => {
     const isOpen = useAppSelector(selectModalOpenStatus);
 
-    const [springs, api] = useSpring(() => ({
-        opacity: 0,
-        scale: 0.9,
-    }));
+    const springs = useSpring({
+        opacity: isOpen ? 1 : 0,
+        scale: isOpen ? 1 : 0.9,
+        config: { tension: 500 }
+    });
 
-    useEffect(() => {
-        if (isOpen) {
-            api.start({
-                opacity: 1,
-                scale: 1,
-            });
-        } else {
-            api.start({
-                opacity: 0,
-                scale: 0.9,
-            });
-        }
-    }, [isOpen]);
-
-    return { springs, isOpen };
+    return springs;
 }

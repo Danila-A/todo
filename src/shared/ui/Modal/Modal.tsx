@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react';
 import styles from './Modal.module.scss';
-import { useModal } from '../../lib/handlers/useModal';
+import { useModalOutsideClick } from '../../lib/handlers/useModalOutsideClick';
 import { animated } from '@react-spring/web';
-import { useAnimatedModal } from '../../lib/modalAnimation/useAnimatedModal';
+import { useAnimatedModal } from '../../lib';
 
 interface Props {
     children: ReactNode;
@@ -10,8 +10,8 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ children, themeType }) => {
-    const { springs, isOpen } = useAnimatedModal();
-    useModal();
+    const springs = useAnimatedModal();
+    useModalOutsideClick();
     
     const themeClass = themeType == 'dark' ? styles.modal_dark : styles.modal_light;
 
@@ -20,7 +20,6 @@ export const Modal: FC<Props> = ({ children, themeType }) => {
             id='modal'
             className={`${styles.modal} ${themeClass}`}
             style={springs}
-            open={isOpen}
         >
             <div className={styles.modal__inner}>
                 { children }
