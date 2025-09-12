@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 
-export const useFilterButton = (
-    isVisible: boolean, 
-    setIsVisible: React.Dispatch<React.SetStateAction<boolean>>
+export const useOutsideFilterButtonClick = (
+    isOpenRef: React.RefObject<boolean>,
+    closeByOutsideClick: () => void,
+    rotateAnimatingArrow: () => void
 ) => {
     useEffect(() => {
         const filterButton = document.querySelector('#filterButton') as HTMLDivElement;
@@ -10,9 +11,10 @@ export const useFilterButton = (
         const clickHandler = (event: MouseEvent) => {
             const eventTarget = event.target as HTMLDivElement;
             
-            if (isVisible) {
+            if (isOpenRef.current) {
                 if (eventTarget?.closest('#filterButton') !== filterButton) {
-                    setIsVisible(false);
+                    closeByOutsideClick();
+                    rotateAnimatingArrow();
                 }
             }
         }
@@ -22,5 +24,5 @@ export const useFilterButton = (
         return () => {
             document.removeEventListener('click', clickHandler);
         }
-    }, [isVisible]);
+    }, [isOpenRef.current]);
 }
