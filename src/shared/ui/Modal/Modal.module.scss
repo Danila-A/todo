@@ -14,8 +14,7 @@
         padding-inline: rem(30);
 
         @include mobile {
-            padding-block: rem(8);
-            padding-inline: rem(20);
+            padding: rem(16);
         }
     }
     

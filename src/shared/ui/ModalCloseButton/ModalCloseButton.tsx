@@ -1,19 +1,17 @@
 import type { FC } from "react";
 import { ModalButton } from "../ModalButton/ModalButton";
+import { closeModal, useAppDispatch } from "../../lib";
 
 export const ModalCloseButton: FC = () => {
-    const handleSubmit = () => {
-        (document.querySelector('body') as HTMLBodyElement)?.classList.remove('no-scroll');
-    }
+    const dispatch = useAppDispatch();
+    const handleClick = () => closeModal(dispatch);
 
     return (
-        <div>
-            <form method='dialog' onSubmit={handleSubmit}>
-                <ModalButton
-                    buttonType={'cancel'}
-                    text={'cancel'}
-                />
-            </form>
+        <div onClick={handleClick}>
+            <ModalButton
+                buttonType={'cancel'}
+                text={'cancel'}
+            />
         </div>
     );
 }

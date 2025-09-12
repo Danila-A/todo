@@ -10,10 +10,8 @@ export const Title: FC<Props> = ({ text, themeType }) => {
     const themeClass = themeType == 'light' ? styles.title_light : styles.title_dark;
 
     return (
-        <div>
-            <span className={ `${styles.title} ${themeClass}` } >
-                { text }
-            </span>
-        </div>
+        <h3 className={ `${styles.title} ${themeClass}` } >
+            { text }
+        </h3>
     );
 }
