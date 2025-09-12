@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { getDataFromLocalStorage } from '../lib/localStorage/getDataFromLocalStorage.ts';
+import { getDataFromLocalStorage } from '../../lib/localStorage/getDataFromLocalStorage.ts';
 
 describe('Testing function which gets data from local storage', () => {
     test('should return value that is placed in localStorage', () => {

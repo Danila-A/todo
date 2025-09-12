@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import styles from './AddForm.module.scss';
-import { Input } from '../../../shared/ui';
+import { Input, ModalCloseButton } from '../../../shared/ui';
 import { addTodo, saveTodosToLocalStorage, type AddTodoFormValue } from '../../../entities/Todo';
 import { TodoAddButton } from '../../../shared/ui';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import { useAppDispatch, useAppSelector } from '../../../shared/lib';
+import { closeModal, useAppDispatch, useAppSelector } from '../../../shared/lib';
 import { selectTheme } from '../../../entities/Theme';
 
 export const AddForm: FC = () => {
@@ -13,11 +13,8 @@ export const AddForm: FC = () => {
     const themeType = useAppSelector(selectTheme);
     
     const handleAddTodoFormSubmit: SubmitHandler<AddTodoFormValue> = (data) => {
-        const modal = document.querySelector('#modal') as HTMLDialogElement;
-        (document.querySelector('body') as HTMLBodyElement)?.classList.remove('no-scroll');
-        modal.close();
-        
         if (!data.add.trim()) return;
+        closeModal(dispatch);
         dispatch(addTodo({ text: data.add }));
         dispatch(saveTodosToLocalStorage());
         setValue('add', '');
@@ -38,6 +35,7 @@ export const AddForm: FC = () => {
                 />
             </div>
             <div className={styles.form__buttons_container}>
+                <ModalCloseButton />
                 <TodoAddButton />
             </div>
         </form>
