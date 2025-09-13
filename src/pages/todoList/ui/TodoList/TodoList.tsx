@@ -23,7 +23,6 @@ export const TodoList: FC<{ todos:TodoItem[] }> = ({ todos }) => {
 
                 {transitions((style, item) => (
                     <animated.div 
-                        key={item.id} 
                         className={styles.todo}
                         style={style}
                     >

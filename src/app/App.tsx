@@ -1,10 +1,17 @@
 import { MainProvider } from './provider/MainProvider';
-import { Main } from '../pages/Main';
+import { Header } from '../pages/header';
+import { TodoListWithImagePlaceholder } from '../pages/todoList';
+import { AddTodoForm } from '../widgets/addTodoForm';
+import { PageWrapper } from '../pages/PageWrapper';
 
 export const App = () => {
-  return (
-    <MainProvider>
-      <Main />
-    </MainProvider>
-  );
+    return (
+        <MainProvider>
+            <PageWrapper>
+                <Header/>
+                <TodoListWithImagePlaceholder />
+                <AddTodoForm />
+            </PageWrapper>
+        </MainProvider>
+    );
 }
