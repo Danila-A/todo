@@ -10,16 +10,18 @@ export const CheckMark: FC<Props> = ({ type }) => {
     const checkColorClass = type === 'checkbox' ? styles.checkbox : styles.edit;
 
     return (
-        <svg 
+        <svg
+            className={styles.svg}
             width="15" 
             height="15" 
             viewBox="0 0 15 15" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
         >
-            <mask 
+            <mask
+                className={checkColorClass}
                 id="path-1-inside-1_18_421" 
-                fill="white"
+                fill="currentColor"
             >
                 <path d="M4.9978
                      14.6488L1.72853e-05 
@@ -38,7 +40,7 @@ export const CheckMark: FC<Props> = ({ type }) => {
                 13.2209ZM13.1291 3.50089L3.56986 
                 13.2484L6.42574 16.0491L15.985 
                 6.30159L13.1291 3.50089Z" 
-                fill="#currentColor" 
+                fill="currentColor" 
                 mask="url(#path-1-inside-1_18_421)"
             />
         </svg>

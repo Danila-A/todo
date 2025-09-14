@@ -1,7 +1,7 @@
 import { MainProvider } from './provider/MainProvider';
 import { Header } from '../pages/header';
 import { TodoListWithImagePlaceholder } from '../pages/todoList';
-import { AddTodoForm } from '../widgets/addTodoForm';
+import { AddTodoForm } from '../widgets/AddTodoForm';
 import { PageWrapper } from '../pages/PageWrapper';
 
 export const App = () => {
