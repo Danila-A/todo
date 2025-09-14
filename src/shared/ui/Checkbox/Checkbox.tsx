@@ -16,7 +16,7 @@ export const Checkbox: FC<Props> = ({ clickHandler, checked, id}) => {
             onClick={() => clickHandler(id)}
             className={`${styles.checkbox} ${CheckboxCheckedClass}`}
         >
-            {checked && <CheckMark />}
+            {checked && <CheckMark type={'checkbox'} />}
         </div>
     );
 }

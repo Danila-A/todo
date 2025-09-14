@@ -1,0 +1,9 @@
+@use '../../../app/styles/variables.scss';
+
+.checkbox {
+    color: var(--icon-color);
+}
+
+.edit {
+    color: var(--edit-confirm-color);
+}
