@@ -1,0 +1,9 @@
+@use '../../../app/styles/helpers' as *;
+
+.button {
+    display: flex;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}

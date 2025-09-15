@@ -1,6 +1,6 @@
 @use '../../../app/styles/helpers' as *;
 
-.trash {
+.button {
     @include flex-center();
 
     cursor: pointer;

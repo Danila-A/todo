@@ -1,17 +1,27 @@
 import type { FC } from "react";
+import styles from './CheckMark.module.scss';
 
-export const CheckMark: FC = () => {
+interface Props {
+    type: 'checkbox' | 'confirm';
+}
+
+export const CheckMark: FC<Props> = ({ type }) => {
+
+    const checkColorClass = type === 'checkbox' ? styles.checkbox : styles.edit;
+
     return (
-        <svg 
+        <svg
+            className={styles.svg}
             width="15" 
             height="15" 
             viewBox="0 0 15 15" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
         >
-            <mask 
+            <mask
+                className={checkColorClass}
                 id="path-1-inside-1_18_421" 
-                fill="white"
+                fill="currentColor"
             >
                 <path d="M4.9978
                      14.6488L1.72853e-05 
@@ -20,7 +30,9 @@ export const CheckMark: FC = () => {
                      4.90124L4.9978 14.6488Z"
                 />
             </mask>
-            <path d="M4.9978 14.6488L3.59745 
+            <path 
+                className={checkColorClass}
+                d="M4.9978 14.6488L3.59745 
                 16.0767L5.02539 17.4771L6.42574 
                 16.0491L4.9978 14.6488ZM6.39816 
                 13.2209L1.40037 8.31962L-1.40034 
@@ -28,7 +40,7 @@ export const CheckMark: FC = () => {
                 13.2209ZM13.1291 3.50089L3.56986 
                 13.2484L6.42574 16.0491L15.985 
                 6.30159L13.1291 3.50089Z" 
-                fill="#F7F7F7" 
+                fill="currentColor" 
                 mask="url(#path-1-inside-1_18_421)"
             />
         </svg>
