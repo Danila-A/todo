@@ -24,11 +24,12 @@ const todoSlice = createSlice({
             }
         },
         toggleTodoStatus(state, action: PayloadAction<{ id: number }>) {
-            const todoItem = state.todoList?.find((item) => item.id == action.payload.id);
-            if (todoItem && state.todoList) {
-                todoItem.status = !todoItem.status;
-                setDataToLocalStorage<TodoItem[]>(state.todoList, 'todos');
-            }
+            state.todoList = state.todoList.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.status = !item.status;
+                    return item;
+                } else return item;
+            });
         },
         saveTodosToLocalStorage(state) {
             setDataToLocalStorage<TodoItem[] | null>(state.todoList, 'todos');
@@ -38,10 +39,8 @@ const todoSlice = createSlice({
                 if (item.id === action.payload.id) {
                     item.text = action.payload.text;
                     return item;
-                } else {
-                    return item;
-                }
-            })
+                } else return item;
+            });
         },
     },
 });
