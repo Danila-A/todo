@@ -33,6 +33,16 @@ const todoSlice = createSlice({
         saveTodosToLocalStorage(state) {
             setDataToLocalStorage<TodoItem[] | null>(state.todoList, 'todos');
         },
+        changeTodo(state, action: PayloadAction<{ id: number, text: string }>) {
+            state.todoList = state.todoList.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.text = action.payload.text;
+                    return item;
+                } else {
+                    return item;
+                }
+            })
+        },
     },
 });
 
@@ -40,7 +50,8 @@ export const {
     addTodo, 
     deleteTodo, 
     toggleTodoStatus, 
-    saveTodosToLocalStorage 
+    saveTodosToLocalStorage,
+    changeTodo
 } = todoSlice.actions;
 export const { selectTodos } = todoSlice.selectors;
 export default todoSlice.reducer;

@@ -24,7 +24,7 @@ export const useListAnimation = (todos: TodoItem[]) => {
             config: {
                 tension: 300,
                 mass: 1
-            },          
+            },
         }
     );
 }
