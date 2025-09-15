@@ -1,0 +1,11 @@
+@use '../../../app/styles/variables.scss';
+
+.svg {
+    .checkbox {
+        color: var(--light-theme-color);
+    }
+
+    .edit {
+        color: var(--edit-confirm-color);
+    }
+}

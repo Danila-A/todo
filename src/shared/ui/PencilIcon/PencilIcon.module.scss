@@ -1,0 +1,14 @@
+@use '../../../app/styles/variables.scss';
+@use '../../../app/styles/helpers' as *;
+
+.svg {
+    .path {
+        color: var(--icon-color);
+    }
+
+    @include hover {
+        .path {
+            color: var(--pencil-icon-active-color);
+        }
+    }
+}

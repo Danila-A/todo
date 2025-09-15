@@ -11,3 +11,6 @@ export { SunIcon } from './SunIcon/SunIcon.tsx';
 export { Title } from './Title/Title.tsx';
 export { TodoAddButton } from './TodoAddButton/TodoAddButton.tsx';
 export { TrashIcon } from './TrashIcon/TrashIcon.tsx';
+export { EditButton } from './EditButton/EditButton.tsx';
+export { ResolveEditButton } from './ResolveEditButton/ResolveEditButton.tsx';
+export { RejectEditButton } from './RejectEditButton/RejectEditButton.tsx';
