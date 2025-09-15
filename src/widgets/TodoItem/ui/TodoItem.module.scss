@@ -14,7 +14,10 @@
         align-items: start;
         position: relative;
         padding-bottom: rem(17);
-        padding-right: rem(24);
+
+        &_padding_right {
+            padding-right: rem(55);
+        }
     }
 
     &__checkbox {
@@ -29,11 +32,14 @@
         }
     }
 
-    &__delete_button {
+    &__buttons_group {
         opacity: 0;
         position: absolute;
         right: rem(3);
         top: rem(4);
+        display: flex;
+        align-items: start;
+        column-gap: rem(5);
 
         @include mobile {
             opacity: 1;
@@ -41,7 +47,7 @@
     }
 
     @include hover {
-        .todo__delete_button {
+        .todo__buttons_group {
             opacity: 1;
         }
     }

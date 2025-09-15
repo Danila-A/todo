@@ -1,0 +1,50 @@
+@use '../../../app/styles/helpers' as *;
+@use '../../../app/styles/variables.scss';
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    column-gap: rem(5);
+
+    &__input {
+        font-size: var(--text-font-size);
+        color: var(--dark-theme-text-color);
+        text-transform: uppercase;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        font-weight: 500;
+        width: 100%;
+        height: rem(26);
+        margin-top: rem(-1);
+
+        @include mobile {
+            margin-top: rem(0);
+        }
+
+        &:focus {
+            outline: none;
+        }
+        
+        &_dark {
+            color: var(--dark-theme-text-color);
+        }
+
+        &_light {
+            color: var(--light-theme-text-color);
+        }
+    }
+
+    &__buttons_groups {
+        padding-top: rem(4);
+        padding-right: rem(3);
+        display: flex;
+        column-gap: rem(5);
+
+        @include mobile {
+            padding-top: rem(5);
+        }
+    }
+}

@@ -1,14 +1,14 @@
 import { MainProvider } from './provider/MainProvider';
 import { Header } from '../pages/header';
 import { TodoListWithImagePlaceholder } from '../pages/todoList';
-import { AddTodoForm } from '../widgets/AddTodoForm';
 import { PageWrapper } from '../pages/PageWrapper';
+import { AddTodoForm } from '../widgets/addTodoForm';
 
 export const App = () => {
     return (
         <MainProvider>
             <PageWrapper>
-                <Header/>
+                <Header />
                 <TodoListWithImagePlaceholder />
                 <AddTodoForm />
             </PageWrapper>

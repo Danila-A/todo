@@ -5,7 +5,8 @@ import
         addTodo,
         deleteTodo,
         toggleTodoStatus,
-        saveTodosToLocalStorage
+        saveTodosToLocalStorage,
+        changeTodo
     } from '../model/todoSlice.ts';
 
 describe('Testing todoSlice', () => {
@@ -85,4 +86,20 @@ describe('Testing todoSlice', () => {
 
         expect(result).toEqual(state.todoList);
     });
+
+    test('should change value of text property of chosen todo', () => {
+        const state ={
+            todoList: [
+                {id: 1, text: 'first', status: false},
+                {id: 2, text: 'second', status: true},
+                {id: 3, text: 'third', status: false},
+            ],
+        }
+
+        const action = { type: changeTodo.type, payload: { id: 2, text: 'not second' }};
+
+        const result = todoReducer(state, action);
+
+        expect(result.todoList[1].text).toBe('not second');
+    })
 });
