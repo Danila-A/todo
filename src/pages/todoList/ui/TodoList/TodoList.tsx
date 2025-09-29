@@ -12,16 +12,17 @@ import { TodoItem } from "../../../../widgets/TodoItem";
 export const TodoList: FC<{ todos:TodoItem[] }> = ({ todos }) => {
     const themeType = useAppSelector(selectTheme);
     const addButtonStyles = useAddButtonPosition();
-    const transitions = useListAnimation(todos);
+    const trails = useListAnimation(todos);
 
     return (
         <main className={styles.main}>
             <div className={`${styles.main__inner} ${utils.container}`}>
 
-                {transitions((style, item) => (
+                {trails.map((props, index) => (
                     <TodoItem
-                        style={style}
-                        item={item}
+                        key={index}
+                        style={props}
+                        item={todos[trails.indexOf(props)]}
                         themeType={themeType}
                     />
                 ))}
