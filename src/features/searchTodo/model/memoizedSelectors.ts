@@ -6,17 +6,18 @@ import { selectTodos } from "../../../entities/Todo";
 export const selectMemoizedTodos = createSelector(
     [selectTodos, selectFilter, selectSearchValue],
     (todos, filter, searchValue) => {
-        if (filter == 'complete') {
-            const result = filterBySearchValue(searchValue, todos);
-            return result.filter((item) => item.status === true);
+        const arrayWithSearch = filterBySearchValue(searchValue, todos).slice();
+        const sortedArray = reverseArray(arrayWithSearch);
+
+        if (filter === 'complete') {
+            return sortedArray.filter((item) => item.status === true);
         }
 
-        if (filter == 'incomplete') {
-            const result = filterBySearchValue(searchValue, todos);
-            return result.filter((item) => item.status === false);
+        if (filter === 'incomplete') {
+            return sortedArray.filter((item) => item.status === false);
         }
 
-        return filterBySearchValue(searchValue, todos);
+        return sortedArray;
     }
 );
 
@@ -28,4 +29,8 @@ function filterBySearchValue(searchValue: string, todos: TodoItem[]): TodoItem[]
     } else {
         return [];
     }
+}
+
+function reverseArray(array: TodoItem[]): TodoItem[] {
+    return array.sort((a, b) => a.id < b.id ? 1 : -1);
 }

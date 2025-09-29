@@ -10,7 +10,10 @@ export const ModalButton: FC<Props> = ({ buttonType, text }) => {
     const buttonTypeClass = buttonType == 'cancel' ? styles.modalButton_cancel : styles.modalButton_apply;
     
     return (
-        <button className={`${styles.modalButton} ${buttonTypeClass}`} >
+        <button 
+            className={`${styles.modalButton} ${buttonTypeClass}`} 
+            type={buttonType === 'apply' ? 'submit' : 'button'}
+        >
             { text }
         </button>
     );
